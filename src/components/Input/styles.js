@@ -35,6 +35,6 @@ export const Container = styled.div`
   
   }
   > svg {
-       margin-left: 14.9rem;
+       margin-left: 13rem;
     }
 `;

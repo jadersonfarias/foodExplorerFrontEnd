@@ -1,7 +1,9 @@
-import { Container, Logo, Search, Request } from "./styles";
+import { Container, Logo, Search, Request, Logout } from "./styles";
 import LogoExplorer from "../../assets/logoExplorer.svg";
+import SignOut from "../../assets/SignOut.svg";
 import { PiReceiptBold } from "react-icons/pi";
 import { FaSearch } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
 
 import { Input } from "../Input";
 import { Button } from "../Button";
@@ -11,7 +13,7 @@ export function Header({ children }) {
     <Container>
       <Logo>
         <img src={LogoExplorer} alt="" />
-        <h1>Food Explorer</h1>
+         <h1>Food Explorer</h1>
       </Logo>
       <Search>
         <Input
@@ -23,6 +25,10 @@ export function Header({ children }) {
       <Request>
         <Button icon={PiReceiptBold} title="pedidos" />
       </Request>
+
+      <Logout>
+        <img src={SignOut} alt="" />
+      </Logout>
     </Container>
   );
 }

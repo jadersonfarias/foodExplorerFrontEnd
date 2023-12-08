@@ -5,18 +5,19 @@ export const Container = styled.div`
     grid-area: header;
     height: 10.4rem;
     width: 100%;
-    padding: 2.4rem 12.3rem;
+    padding: 2.4rem 10.3rem;
 
     background-color: ${({ theme }) => theme.COLORS.DARK['600']};
     
     display: flex;
+    align-items: center;
+ 
     justify-content: space-between;
     
     `
 
 export const Search = styled.div`
-
-    width: 58.0rem;
+    width: 50.0rem;
 
 `
 
@@ -32,4 +33,17 @@ export const Logo = styled.div`
 `
 export const Request = styled.div`
         width: 21.6rem;
+        display: flex;
+        align-items: center;
+     
+        justify-content: center;
+    
+        margin-bottom: .8rem;
+  
+
+`
+export const Logout = styled.button`
+     border: none;
+     background: none;
+
 `
