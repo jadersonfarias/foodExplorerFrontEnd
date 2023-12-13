@@ -6,12 +6,15 @@ export const Container = styled.div`
     width: 24.7rem;
     height: 48.0rem;
     position: relative;
-
+    
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    padding: 0px 2.4rem;
+
 
     > h2 {
         font-size: 2.4rem;

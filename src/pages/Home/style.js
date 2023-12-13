@@ -20,10 +20,10 @@ export const Container = styled.div`
         width: 100vw;
     }
 
-    /* .slide-item{
-        width: 100%;
+     .slide-item{
+        width: 350px;
         height: 350px;
-    } */
+    } 
             
 `
 

@@ -3,11 +3,20 @@ import { Dishes } from "../../components/Dishes";
 import { Header } from "../../components/Header";
 import { Section } from "../../components/Section";
 import { Footer } from "../../components/Footer";
+import { Slider } from "../../components/Slider";
+
 import homeBanner from "../../assets/home-banner.png";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
+import Swiper from "swiper";
 
 export function Home() {
+  const data = [
+    { id: "1", Image: homeBanner },
+    { id: "2", Image: homeBanner },
+    { id: "3", Image: homeBanner },
+    { id: "4", Image: homeBanner },
+  ];
   return (
     <Container>
       <Header />
@@ -24,36 +33,37 @@ export function Home() {
               <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
             </div>
           </header>
-          <Section title="Refeições">
-            <Swiper
-              slidesPerView={1}
-              pagination={{ clickable: true }}
-              navigation
-            >
-              <SwiperSlide>
-                <Dishes
-                  data={{
-                    title: "Torradas de Parma",
-                    description:
-                      "Presunto de parma e rúcula em um pão com fermentação natural.",
-                    rating: "25,88",
-                  }}
-                />
+        
+        <section title="refeições">
+        <Section title="refeições">
+            <Slider>
+              {data.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <img src={item.Image}
+                    alt="slider" 
+                    className="slide-item"
+                    />
+                </SwiperSlide>
+               ))}
+              </Slider>
+      
+              </Section>
 
-                {/* <Dishes
-                data={{
-                  title: "Torradas de Parma",
-                  description:
-                    "Presunto de parma e rúcula em um pão com fermentação natural.",
-                  rating: "25,88",
-                }}
-              /> */}
-              </SwiperSlide>
-            </Swiper>
-          </Section>
+        </section>
+         
         </Content>
       </main>
-      <Footer/>
+      <Footer />
     </Container>
   );
+}
+
+{
+  /* <Dishes
+data={{
+  title: "Torradas de Parma",
+  description:
+    "Presunto de parma e rúcula em um pão com fermentação natural.",
+  rating: "25,88",
+}} */
 }
