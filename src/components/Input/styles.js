@@ -4,37 +4,34 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: row;
+ 
 
-
-  background-color: ${({ theme }) => theme.COLORS.DARK["900"]};
+  background-color: ${({ theme }) => theme.COLORS.DARK["800"]};
   color: ${({ theme }) => theme.COLORS.LIGHT["500"]};
 
-  border-radius: 0.5rem;
-  margin-bottom: 0.8rem;
+  border-radius: .5rem;
+  margin-bottom: 1.8rem;
 
-  > Input {
-    
+ > Input {
     height: 4.8rem;
     width: 100%;
 
-    padding: 1.6rem;
+    padding: 1.2rem 1.7rem;
 
-    color: ${({ theme }) => theme.COLORS.LIGHT['100']};
+    color: ${({ theme }) => theme.COLORS.LIGHT['500']};
     background: transparent;
     border: 0;
 
     font-size: 1.6rem;
     font-weight: 400;    
-
-    &:placeholder{
-        
-        color: ${({ theme }) => theme.COLORS.LIGHT["500"]};
-    }
-
+ }
   
+    > svg {
+    margin-left: 1.4rem;
+    font-size: 2rem;    
   }
-  > svg {
-       margin-left: 13rem;
-    }
+  
+  
+  
 `;
