@@ -8,7 +8,7 @@ import { Slider } from "../../components/Slider";
 import homeBanner from "../../assets/home-banner.png";
 
 import { SwiperSlide } from "swiper/react";
-import Swiper from "swiper";
+
 
 export function Home() {
   const data = [

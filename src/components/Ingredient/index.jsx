@@ -1,9 +1,9 @@
 import { Container } from "./styles";
 
-export function Ingredient(){
+export function Ingredient({title, ...rest}){
     return(
-        <Container>
-            
+        <Container {...rest}>
+            {title}
         </Container>
     )
 }
