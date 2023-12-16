@@ -12,12 +12,13 @@ import theme from "./styles/theme.js";
 import { Home } from "./pages/Home/index.jsx";
 import { SignUp } from "./pages/SignUp/index.jsx";
 import { SignIn } from "./pages/SignIn/index.jsx";
+import { PreviewDish } from "./pages/PreviewDish/index.jsx"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles/>
-      <SignUp/>
+      <PreviewDish/>
     </ThemeProvider>
   </React.StrictMode>
 );

@@ -18,6 +18,7 @@ export const Container = styled.div`
 
 export const Search = styled.div`
     width: 50.0rem;
+    margin-top: 1rem;
 
 `
 
@@ -45,5 +46,7 @@ export const Request = styled.div`
 export const Logout = styled.button`
      border: none;
      background: none;
+     margin-bottom: .5rem;
+
 
 `

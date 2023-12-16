@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: row;
+
  
 
   background-color: ${({ theme }) => theme.COLORS.DARK["800"]};

@@ -27,7 +27,7 @@ export function Header({ children }) {
       </Request>
 
       <Logout>
-        <img src={SignOut} alt="" />
+        <img src={SignOut} alt="sair" />
       </Logout>
     </Container>
   );
