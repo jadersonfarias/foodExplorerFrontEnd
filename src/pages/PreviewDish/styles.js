@@ -10,18 +10,21 @@ export const Container = styled.div`
     "content"
     "footer";
 
+
     
 
 `
 
 export const Content = styled.div`
-  width: 80.0rem;
   grid-area: content;
   padding:  5.6rem ;
+  margin: 0 12.1rem;
+  position: relative;
+
 
   
 
-  .bottom-card{
+.bottom-card{
     display: flex;
     align-items: center;
     gap: 2.4rem;
@@ -32,16 +35,29 @@ export const Content = styled.div`
     align-items: center;
     justify-content: center;
 
-  gap: 1.4rem;
+    gap: 1.4rem;
 
 }
 
 .container {
-   
+   width: 100%;
+   margin-left: 4.3rem;
+
+   > p {
+      margin: 2.4rem  0  2.4rem 0;
+   }
 }
   section {
     display: flex;
-  align-items: center;
+    align-items: center; 
+
+  .ingredient-tag{
+    display: flex;
+    align-items: start;
+
+    gap: .8rem;
+    margin-bottom: 4.8rem;
+  }
 
 
     img {
@@ -55,9 +71,29 @@ export const Content = styled.div`
 
 export const ButtonCard = styled(Button)`
   background: ${({theme}) => theme.COLORS.TOMATO['100']};
-  padding: 2.4rem;
-
-
-
+  width:16.2rem;
+  height: 4.8rem;
   
 `
+
+export const Button_back = styled.button`
+   display: flex;
+   align-items: center;
+
+   position: absolute;
+   top: 1.5rem;
+
+   
+
+   background-color: transparent;
+   border: none;
+
+   > svg {
+      font-size: 3.2rem;
+   }
+
+   font-size: 1rem;
+   color: white;
+  
+`
+        
