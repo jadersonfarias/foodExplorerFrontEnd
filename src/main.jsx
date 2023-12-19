@@ -13,12 +13,13 @@ import { Home } from "./pages/Home/index.jsx";
 import { SignUp } from "./pages/SignUp/index.jsx";
 import { SignIn } from "./pages/SignIn/index.jsx";
 import { PreviewDish } from "./pages/PreviewDish/index.jsx"
+import { CreateDish } from "./pages/CreateDish/index.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles/>
-      <PreviewDish/>
+      <CreateDish/>
     </ThemeProvider>
   </React.StrictMode>
 );
