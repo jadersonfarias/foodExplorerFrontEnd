@@ -15,10 +15,8 @@ export function PreviewDish() {
     <Container>
       <Header />
       <Content>
-        <Button_back >
-          <IoIosArrowBack />
-          <h1>Voltar</h1>
-        </Button_back>
+        <Button_back title="voltar" icon={IoIosArrowBack} />
+
         <section>
           <img src={salada} alt="salada" />
           <div className="container">

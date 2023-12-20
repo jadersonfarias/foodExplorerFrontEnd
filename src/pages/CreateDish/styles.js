@@ -112,18 +112,18 @@ export const Form = styled.form`
 
   .col-2 {
     .ingredients {
-    padding: .4rem;
-    display: flex;
+      padding: 0.4rem;
+      display: flex;
 
-    border-radius: .6rem;
-    
-    padding: .3rem .8rem;
-    gap: 1.6rem;
-    
-    width: 100%;
-    height: auto;
-    background-color: ${({ theme }) => theme.COLORS.DARK['800']};      
-  }
+      border-radius: 0.6rem;
+
+      padding: 0.3rem 0.8rem;
+      gap: 1.6rem;
+
+      width: 100%;
+      height: auto;
+      background-color: ${({ theme }) => theme.COLORS.DARK["800"]};
+    }
   }
 `;
 

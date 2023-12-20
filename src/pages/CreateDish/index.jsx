@@ -1,4 +1,4 @@
-import { Container, Form, Button_back } from "./styles";
+import { Container, Form} from "./styles";
 import { IoIosArrowBack } from "react-icons/io";
 import { FaArrowUpFromBracket } from "react-icons/fa6";
 import { RiArrowDownSLine } from "react-icons/ri";
@@ -8,18 +8,16 @@ import { Textarea } from "../../components/TextArea";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Ingredients } from "../../components/Ingredients";
+import { ButtonText } from "../../components/ButtonText";
 
 export function CreateDish() {
   return (
     <Container>
-      <Header />
+      <Header  />
       <main>
         <Form>
           <header>
-            <Button_back>
-              <IoIosArrowBack />
-              voltar
-            </Button_back>
+            <ButtonText title="Voltar" icon={IoIosArrowBack} to="/"/>
             <h1>Adicionar prato</h1>
           </header>
           <section className="col-1">
@@ -72,14 +70,13 @@ export function CreateDish() {
                   Preço
                   <Input
                       id="price"
-                      type="text"
                       placeholder="R$ 00,00"
                   />
                 </label>
           </section>
 
           <label htmlFor="description">
-          Description
+          Descrição
           <Textarea 
           id="description"
           placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"

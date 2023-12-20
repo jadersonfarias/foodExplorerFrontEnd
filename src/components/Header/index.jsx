@@ -8,12 +8,16 @@ import { FiLogOut } from "react-icons/fi";
 import { Input } from "../Input";
 import { Button } from "../Button";
 
-export function Header({ children }) {
+
+
+export function Header({ children, ...rest }) {
   return (
-    <Container>
+    <Container {...rest}>
       <Logo>
         <img src={LogoExplorer} alt="" />
          <h1>Food Explorer</h1>
+         
+       
       </Logo>
       <Search>
         <Input

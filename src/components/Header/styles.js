@@ -31,6 +31,13 @@ export const Logo = styled.div`
         font-size: 1.2rem;
         font-weight: 700;
 
+        /* span {
+      margin-top: 0.2rem; 
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: ${({ theme }) => theme.COLORS.CAKE['200']};
+    } */
+
 `
 export const Request = styled.div`
         width: 21.6rem;

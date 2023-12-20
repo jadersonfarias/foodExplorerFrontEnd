@@ -32,7 +32,7 @@ export const Form = styled.form`
       
   .labels {
     display: flex;
-    margin-bottom: .8rem;
+    margin-bottom: .5rem;
     font-size: 1.6rem;
   }
 

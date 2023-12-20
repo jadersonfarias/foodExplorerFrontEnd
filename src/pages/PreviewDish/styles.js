@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Button } from "../../components/Button";
+import { ButtonText } from "../../components/ButtonText";
 
 export const Container = styled.div`
      height: 100vh;
@@ -76,24 +77,9 @@ export const ButtonCard = styled(Button)`
   
 `
 
-export const Button_back = styled.button`
-   display: flex;
-   align-items: center;
-
+export const Button_back = styled(ButtonText)`
    position: absolute;
    top: 1.5rem;
 
-   
-
-   background-color: transparent;
-   border: none;
-
-   > svg {
-      font-size: 3.2rem;
-   }
-
-   font-size: 1rem;
-   color: white;
-  
 `
         

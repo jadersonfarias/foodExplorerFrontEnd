@@ -1,20 +1,19 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Container = styled.button`   
+export const Container = styled(Link)`   
   color: ${({ theme }) => theme.COLORS.LIGHT['100']};
   font-family: Poppins;
   background: none;  
 
   
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;  
   gap: .8rem;  
     
   border: 0;
   
-  font-size: 1.4rem;
+  font-size: 2.0rem;
   font-weight: 500;
   line-height: 2.4rem; 
   text-align: center;
