@@ -32,8 +32,8 @@ export function SignUp() {
             Senha
           </label>
           <Input placeholder="Senha: 123" type="password" icon={FiLock} />
+           <Button title="faça login" />
         </div>
-        <Button title="faça login" />
 
         <Link to="/">Já tenho uma conta</Link>
       </Form>

@@ -9,6 +9,8 @@ import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Ingredients } from "../../components/Ingredients";
 import { ButtonText } from "../../components/ButtonText";
+import { Button } from "../../components/Button";
+
 
 export function CreateDish() {
   return (
@@ -82,10 +84,12 @@ export function CreateDish() {
           placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
           />
           </label>
-
+{/* 
         <button>
           salvar alteracões
-        </button>
+        </button> */}
+        <Button title="Salvar alteracões"/>   
+       
         </Form>
       </main>
       <Footer />

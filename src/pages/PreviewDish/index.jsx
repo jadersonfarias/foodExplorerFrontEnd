@@ -9,15 +9,16 @@ import { ButtonText } from "../../components/ButtonText";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Ingredient } from "../../components/Ingredient";
+import { Ingredients } from "../../components/Ingredients";
 
 export function PreviewDish() {
   return (
     <Container>
       <Header />
       <Content>
-        <Button_back title="voltar" icon={IoIosArrowBack} />
+        <Button_back title="voltar" icon={IoIosArrowBack} to="/"/>
 
-        <section>
+        <section >
           <img src={salada} alt="salada" />
           <div className="container">
             <h1>Salada Ravanello</h1>

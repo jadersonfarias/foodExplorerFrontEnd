@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Button } from "../../components/Button";
 import { ButtonText } from "../../components/ButtonText";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
      height: 100vh;
@@ -22,6 +23,20 @@ export const Content = styled.div`
   margin: 0 12.1rem;
   position: relative;
 
+  @media(max-width: ${DEVICE_BREAKPOINTS.LG}){
+    margin: 0 10.1rem;
+      section {
+          display: flex;
+          flex-direction: column;  
+          text-align: justify;
+      }
+
+      .container {
+        h1 {
+          text-align: center;
+        }
+      }
+    }
 
   
 
@@ -44,6 +59,8 @@ export const Content = styled.div`
    width: 100%;
    margin-left: 4.3rem;
 
+
+
    > p {
       margin: 2.4rem  0  2.4rem 0;
    }
@@ -52,11 +69,12 @@ export const Content = styled.div`
     display: flex;
     align-items: center; 
 
+
   .ingredient-tag{
     display: flex;
     align-items: start;
 
-    gap: .8rem;
+    gap: .9rem;
     margin-bottom: 4.8rem;
   }
 
@@ -65,7 +83,9 @@ export const Content = styled.div`
       width: 26.3rem;
       height: 26.3rem;
     }
+   
   }
+
   
   
 `

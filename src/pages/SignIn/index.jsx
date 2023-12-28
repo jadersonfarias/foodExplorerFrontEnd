@@ -9,7 +9,7 @@ import { FiMail, FiLock } from "react-icons/fi";
 export function SignIn() {
   return (
     <Container>
-      <Logo />
+      <Logo/>
       <Form>
         <h1>Faça login</h1>
         <div className="email">
@@ -24,8 +24,8 @@ export function SignIn() {
             Senha
           </label>
           <Input placeholder="Senha" type="password" icon={FiLock} />
-        </div>
         <Button title="faça login" />
+        </div>
 
         <Link to="/register">criar uma conta</Link>
       </Form>

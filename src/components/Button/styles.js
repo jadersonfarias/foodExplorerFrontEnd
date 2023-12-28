@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 
 export const Container = styled.button`
@@ -23,6 +24,10 @@ export const Container = styled.button`
   font-weight: 500;
   line-height: 2.4rem;  
   text-align: center;
+
+  @media(max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    height: 3.5rem;
+  }
 
   &:disabled {
     opacity: .5;

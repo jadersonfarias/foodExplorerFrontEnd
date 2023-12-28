@@ -12,8 +12,8 @@ export function Slider({ children, ...rest }) {
     <Container {...rest}>
       <Swiper
         modules={[Navigation, Pagination, A11y]}
-        // spaceBetween={30}
-         slidesPerView={3}
+         spaceBetween={30}
+         slidesPerView={1}
         navigation={{ clickable: true  }} 
         pagination={{ clickable: true }}
         loop={true} //faz os pratos rodar em loop

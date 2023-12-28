@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
      height: 100vh;
@@ -17,6 +18,23 @@ export const Container = styled.div`
 export const Form = styled.form`
   max-width: 112rem;
   margin: 4rem auto 11.6rem;
+  @media(max-width: ${DEVICE_BREAKPOINTS.LG}){
+       width: 85rem;
+  }
+
+  @media(max-width: ${DEVICE_BREAKPOINTS.MD}){
+    width: 50.6rem;
+    section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buttons {
+       button{
+        width: 100%;
+       }
+    }
+}
 
   header {
     > h1 {

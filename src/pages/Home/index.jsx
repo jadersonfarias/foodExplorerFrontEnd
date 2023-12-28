@@ -9,7 +9,6 @@ import homeBanner from "../../assets/home-banner.png";
 
 import { SwiperSlide } from "swiper/react";
 
-
 export function Home() {
   const data = [
     { id: "1", Image: homeBanner },
@@ -33,24 +32,52 @@ export function Home() {
               <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
             </div>
           </header>
-        
-        <section title="refeições">
-        <Section title="refeições">
-            <Slider>
-              {data.map((item) => (
-                <SwiperSlide key={item.id}>
-                  <img src={item.Image}
-                    alt="slider" 
-                    className="slide-item"
-                    />
-                </SwiperSlide>
-               ))}
-              </Slider>
-      
-              </Section>
 
-        </section>
-         
+            <Section title="refeições">
+              <Slider>
+              <SwiperSlide>
+                  <Dishes
+                    data={{
+                      title: "Torradas de Parma",
+                      description:
+                        "Presunto de parma e rúcula em um pão com fermentação natural.",
+                      rating: "25,88",
+                    }}
+                  /> 
+                </SwiperSlide>            
+              </Slider>
+            </Section>
+
+            <Section title="Sobremesas">
+              <Slider>
+              <SwiperSlide>
+                  <Dishes
+                    data={{
+                      title: "Torradas de Parma",
+                      description:
+                        "Presunto de parma e rúcula em um pão com fermentação natural.",
+                      rating: "25,88",
+                    }}
+                  /> 
+                </SwiperSlide>            
+              </Slider>
+            </Section>
+
+            <Section title="Bebidas">
+              <Slider>
+              <SwiperSlide>
+                  <Dishes
+                    data={{
+                      title: "Torradas de Parma",
+                      description:
+                        "Presunto de parma e rúcula em um pão com fermentação natural.",
+                      rating: "25,88",
+                    }}
+                  /> 
+                </SwiperSlide>            
+              </Slider>
+            </Section>
+        
         </Content>
       </main>
       <Footer />
@@ -67,3 +94,24 @@ data={{
   rating: "25,88",
 }} */
 }
+
+// {data.map((item) => (
+//   <SwiperSlide key={item.id}>
+//     <img src={item.Image}
+//       alt="slider"
+//       className="slide-item"
+//       />
+//   </SwiperSlide>
+//  ))}
+
+
+{/* <SwiperSlide>
+                  <Dishes
+                    data={{
+                      title: "Torradas de Parma",
+                      description:
+                        "Presunto de parma e rúcula em um pão com fermentação natural.",
+                      rating: "25,88",
+                    }}
+                  />
+                </SwiperSlide> */}
