@@ -4,6 +4,7 @@ import { Header } from "../../components/Header";
 import { Section } from "../../components/Section";
 import { Footer } from "../../components/Footer";
 import { Slider } from "../../components/Slider";
+import { Menu } from "../../components/Menu";
 
 import homeBanner from "../../assets/home-banner.png";
 
@@ -18,6 +19,7 @@ export function Home() {
   ];
   return (
     <Container>
+      <Menu/>
       <Header />
       <main>
         <Content>

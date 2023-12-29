@@ -3,21 +3,24 @@ import { Button } from "../Button";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
-  width: 30.5rem;
-  height: 48rem;
+  max-width: 21.5rem;
+  height: 33rem;
   position: relative;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  //justify-content: center;
+
+  background-color: ${({ theme }) => theme.COLORS.DARK['300']};
  
   margin-left: 5rem;
-  padding: 0px 2.4rem;
+  padding: 2.1rem;
+  border-radius: .3rem;
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
     width: 29rem;
-    height: 40.0rem;
+    height: 30.0rem;
 
     text-align: center;
    
@@ -26,6 +29,7 @@ export const Container = styled.div`
         line-height: 2.4rem;
     } 
   
+
 
      .hidden {
       display: none;
@@ -50,8 +54,15 @@ export const Container = styled.div`
 
 
 > h2 {
-    font-size: 2.3rem;
+    width: 100%;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    text-align: center;
     color: ${({ theme }) => theme.COLORS.LIGHT["300"]};
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   > p {
@@ -62,7 +73,7 @@ export const Container = styled.div`
   }
 
   > span {
-    padding: 1.2rem 0px;
+    padding: 1rem 0px;
     color: ${({ theme }) => theme.COLORS.CAKE["200"]};
     font-family: Roboto;
     font-size: 2.8rem;
@@ -70,8 +81,7 @@ export const Container = styled.div`
   }
 
   > img {
-    width: 17.6rem;
-    height: 17.6rem;
+    max-width: 8.8rem;
   }
 
   .like {
@@ -91,11 +101,20 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
 
+    p {
+      font-size: 2.2rem;
+    }
+
     gap: 1.4rem;
   }
 `;
 
 export const ButtonCard = styled(Button)`
+  width: 7.2rem;
+  height: 3.8rem;
   background: ${({ theme }) => theme.COLORS.TOMATO["100"]};
-  padding: 2.4rem;
+  
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    width: 100%;
+  }
 `;

@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
 
+
   display: grid;
   grid-template-rows: 10.4rem auto 7.7rem;
   grid-template-areas:
@@ -29,13 +30,15 @@ export const Container = styled.div`
          main {
             padding-top: 4.4rem;
         }
+
+        
     }
 `;
 
 export const Content = styled.div`
   width: 112.2rem;
-  
 
+  background-color: ${({ theme }) => theme.COLORS.DARK['400']};
 
   margin: 0 auto;
 
