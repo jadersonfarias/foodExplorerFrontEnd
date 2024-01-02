@@ -3,14 +3,15 @@ import { Container, Header, Content, Nav} from "./styles";
 import { X, MagnifyingGlass } from "@phosphor-icons/react";
 
 import { Footer } from"../Footer"
-import { ButtonText } from "../ButtonText"
 import { Input } from "../Input";
 
-export function Menu(){
+export function Menu({menuIsOpen, onCloseMenu}){
     return(
-        <Container>
+        <Container data-menu-is-open={menuIsOpen}>
            <Header>
-                <ButtonText title="Menu" icon={X}/>
+               <button onClick={onCloseMenu}>
+                    <h1><X/>Menu</h1>
+               </button>
            </Header>
            <Content>
                 <Input icon={MagnifyingGlass} placeholder="Busque por pratos ou ingredientes"/>
@@ -19,9 +20,7 @@ export function Menu(){
                      <a href="#">sair</a>
                 </Nav>
            </Content>
-           <Footer>
-
-           </Footer>
+          <Footer></Footer>
 
         </Container>
     )

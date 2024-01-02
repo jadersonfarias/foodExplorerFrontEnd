@@ -23,7 +23,7 @@ export const Form = styled.form`
   }
 
   @media(max-width: ${DEVICE_BREAKPOINTS.MD}){
-    width: 50.6rem;
+    width: 45.6rem;
     section{
         display: flex;
         flex-direction: column;

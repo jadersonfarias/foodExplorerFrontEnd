@@ -18,13 +18,11 @@ import { List, Receipt } from "@phosphor-icons/react";
 import { Input } from "../Input";
 import { Button } from "../Button";
 
-export function Header({ children, ...rest }) {
+export function Header({ onOpenMenu, children, ...rest   }) {
   return (
     <Container {...rest}>
-    
 
-
-      <Menu>
+      <Menu onClick={onOpenMenu}>
         <List />
       </Menu>
       <Logo>

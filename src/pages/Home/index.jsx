@@ -6,21 +6,28 @@ import { Footer } from "../../components/Footer";
 import { Slider } from "../../components/Slider";
 import { Menu } from "../../components/Menu";
 
+import { useState } from "react";
+
 import homeBanner from "../../assets/home-banner.png";
 
 import { SwiperSlide } from "swiper/react";
 
 export function Home() {
-  const data = [
-    { id: "1", Image: homeBanner },
-    { id: "2", Image: homeBanner },
-    { id: "3", Image: homeBanner },
-    { id: "4", Image: homeBanner },
-  ];
+  const [ menuIsOpen, setMenuIsOpen ] = useState(false);
+
+  // const data = [
+  //   { id: "1", Image: homeBanner },
+  //   { id: "2", Image: homeBanner },
+  //   { id: "3", Image: homeBanner },
+  //   { id: "4", Image: homeBanner },
+  // ];
   return (
     <Container>
-      <Menu/>
-      <Header />
+      <Menu
+      menuIsOpen={menuIsOpen}
+      onCloseMenu={() => setMenuIsOpen(false)}
+      />
+      <Header onOpenMenu={() => setMenuIsOpen(true)} />
       <main>
         <Content>
           <header>

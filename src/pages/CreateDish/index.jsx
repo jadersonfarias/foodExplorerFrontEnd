@@ -3,6 +3,8 @@ import { IoIosArrowBack } from "react-icons/io";
 import { FaArrowUpFromBracket } from "react-icons/fa6";
 import { RiArrowDownSLine } from "react-icons/ri";
 
+import { useState } from "react";
+
 import { Input } from "../../components/Input";
 import { Textarea } from "../../components/TextArea";
 import { Header } from "../../components/Header";
@@ -10,12 +12,18 @@ import { Footer } from "../../components/Footer";
 import { Ingredients } from "../../components/Ingredients";
 import { ButtonText } from "../../components/ButtonText";
 import { Button } from "../../components/Button";
+import { Menu } from "../../components/Menu";
 
 
 export function CreateDish() {
+  const [ menuIsOpen, setMenuIsOpen ] = useState(false);
   return (
     <Container>
-      <Header  />
+       <Menu
+      menuIsOpen={menuIsOpen}
+      onCloseMenu={() => setMenuIsOpen(false)}
+      />
+      <Header onOpenMenu={() => setMenuIsOpen(true)} />
       <main>
         <Form>
           <header>

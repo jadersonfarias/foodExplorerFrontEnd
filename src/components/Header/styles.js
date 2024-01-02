@@ -34,7 +34,7 @@ export const Container = styled.div`
     `
 
 export const Search = styled.div`
-    width: 50.0rem;
+    width: 48.0rem;
     margin-top: 1rem;
 
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
@@ -43,7 +43,7 @@ export const Search = styled.div`
      }
 
      @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {
-        width: 30.0rem;
+        width: 28.0rem;
 
      }
 

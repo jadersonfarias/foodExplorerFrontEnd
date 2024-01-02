@@ -2,19 +2,25 @@ import { Container, Form } from "./styles";
 
 import { IoIosArrowBack } from "react-icons/io";
 import { FaArrowUpFromBracket } from "react-icons/fa6";
+import { useState } from "react";
 
+import { Menu } from "../../components/Menu";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Input } from "../../components/Input";
 import { Textarea } from "../../components/TextArea";
 import { Ingredients } from "../../components/Ingredients";
-
 import { ButtonText } from "../../components/ButtonText";
 
 export function EditDish() {
+  const [ menuIsOpen, setMenuIsOpen ] = useState(false);
   return (
     <Container>
-      <Header />
+       <Menu
+      menuIsOpen={menuIsOpen}
+      onCloseMenu={() => setMenuIsOpen(false)}
+      />
+      <Header onOpenMenu={() => setMenuIsOpen(true)}/>
       <main>
         <Form>
           <header>
@@ -78,6 +84,7 @@ export function EditDish() {
         </Form>
       </main>
       <Footer />
+      <Menu/>
     </Container>
   );
 }
