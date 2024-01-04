@@ -6,7 +6,9 @@ export const Container = styled.div`
 
   display: flex;
   align-items: center;
+  gap: .8rem;
   margin: .2rem;
+
 
   background-color: ${({ theme, isNew }) =>
     isNew ? "transparent" : theme.COLORS.LIGHT["600"]};
@@ -14,16 +16,17 @@ export const Container = styled.div`
     isNew ? theme.COLORS.LIGHT["500"] : theme.COLORS.LIGHT["100"]};
 
   border: ${({ theme, isNew }) =>
-    isNew ? `1px dashed ${theme.COLORS.LIGHT["500"]}` : "none"};
+    isNew ? `2px dashed ${theme.COLORS.LIGHT["500"]}` : "none"};
 
   > input {
     display: flex;
-    text-align: center;
-    max-width: 70px;
+    align-items: center;
+    width: 70px;
     height: 2.8rem;
+  
 
     color: ${({ theme }) => theme.COLORS.LIGHT["100"]};
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     background: transparent;
     border: none;
 
@@ -37,7 +40,7 @@ export const Container = styled.div`
   > button {
     background: none;
     border: none;
-    padding-right:1rem;
+ 
 
     > svg {
       width: 100%;

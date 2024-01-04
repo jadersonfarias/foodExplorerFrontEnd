@@ -2,10 +2,14 @@ import { Container, Header, Content, Nav} from "./styles";
 
 import { X, MagnifyingGlass } from "@phosphor-icons/react";
 
+import { useAuth } from "../../hooks/auth";
+
 import { Footer } from"../Footer"
 import { Input } from "../Input";
 
 export function Menu({menuIsOpen, onCloseMenu}){
+  const { signOut } = useAuth()
+
     return(
         <Container data-menu-is-open={menuIsOpen}>
            <Header>
@@ -17,7 +21,7 @@ export function Menu({menuIsOpen, onCloseMenu}){
                 <Input icon={MagnifyingGlass} placeholder="Busque por pratos ou ingredientes"/>
                 <Nav>
                      <a href="#">novo prato</a>
-                     <a href="#">sair</a>
+                     <a href="#" onClick={signOut}>sair</a>
                 </Nav>
            </Content>
           <Footer></Footer>

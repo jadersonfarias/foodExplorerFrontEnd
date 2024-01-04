@@ -11,7 +11,8 @@ import LogoExplorer from "../../assets/logoExplorer.svg";
 import SignOut from "../../assets/SignOut.svg";
 import { PiReceiptBold } from "react-icons/pi";
 import { FaSearch } from "react-icons/fa";
-import { FiLogOut } from "react-icons/fi";
+
+import { useAuth } from "../../hooks/auth";
 
 import { List, Receipt } from "@phosphor-icons/react";
 
@@ -19,6 +20,7 @@ import { Input } from "../Input";
 import { Button } from "../Button";
 
 export function Header({ onOpenMenu, children, ...rest   }) {
+  const { signOut } = useAuth()
   return (
     <Container {...rest}>
 
@@ -40,7 +42,7 @@ export function Header({ onOpenMenu, children, ...rest   }) {
         <Button icon={PiReceiptBold} title="pedidos (0)" />
       </Request>
 
-      <Logout>
+      <Logout onClick={signOut}>
         <img src={SignOut} alt="sair" />
       </Logout>
 
