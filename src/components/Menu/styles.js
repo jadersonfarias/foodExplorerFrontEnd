@@ -3,22 +3,20 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.aside`
    position: fixed;
-   display: grid;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
    
    width: 100%;
-   height: 100vh;
-   grid-template-rows: 10.4rem auto 7.7rem;
-   grid-template-areas:
-    "header"
-    "content"
-    "footer"; 
+   min-height: 100vh;
+  
     transform: translate(-200%);
     transition: transform 0.3s ease-in-out;;
 
 
  
   position: absolute;
-  z-index: 10;
+  z-index: 99;
 
  
 
@@ -29,12 +27,11 @@ export const Container = styled.aside`
   
 
   @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
-    grid-template-columns: 54rem;
+   
   }
 `;
 
 export const Header = styled.header`
-  grid-area: header;
   display: flex;
   align-items: end;
 
@@ -64,7 +61,7 @@ svg{
 `;
 
 export const Content = styled.div`
-  grid-area: content;
+  flex: 1;
   padding: 3.2rem 3.2rem 0 3.2rem;
   background-color: ${({ theme }) => theme.COLORS.DARK["500"]};
 `;

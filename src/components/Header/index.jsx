@@ -16,11 +16,27 @@ import { useAuth } from "../../hooks/auth";
 
 import { List, Receipt } from "@phosphor-icons/react";
 
+import { api } from "../../services/api";
 import { Input } from "../Input";
 import { Button } from "../Button";
+import { useGlobalStates } from "../../hooks/globalStates";
+
 
 export function Header({ onOpenMenu, children, ...rest   }) {
   const { signOut } = useAuth()
+  const {search, setSearch, setDishes} = useGlobalStates()
+
+  async function handleSearch(e){
+    if(e.key === "Enter"){
+      const res = await api.get(`/dishes?search=${search}`)
+      console.log(res.data)
+      setDishes(res.data)
+  } 
+}
+  function handleChange(e){
+      setSearch(e.target.value)
+  }
+
   return (
     <Container {...rest}>
 
@@ -35,6 +51,9 @@ export function Header({ onOpenMenu, children, ...rest   }) {
         <Input
           placeholder="Busque por pratos ou ingredientes"
           icon={FaSearch}
+          onKeyPress={handleSearch}
+          onChange={handleChange}
+          value={search}
         />
       </Search>
 

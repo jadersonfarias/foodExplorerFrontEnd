@@ -20,8 +20,8 @@ export function Menu({menuIsOpen, onCloseMenu}){
            <Content>
                 <Input icon={MagnifyingGlass} placeholder="Busque por pratos ou ingredientes"/>
                 <Nav>
-                     <a href="#">novo prato</a>
-                     <a href="#" onClick={signOut}>sair</a>
+                     <a href="#">Novo prato</a>
+                     <a href="#" onClick={signOut}>Sair</a>
                 </Nav>
            </Content>
           <Footer></Footer>

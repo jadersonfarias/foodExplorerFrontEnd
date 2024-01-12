@@ -1,7 +1,7 @@
 import { Container, Form } from "./styles";
 import { IoIosArrowBack } from "react-icons/io";
 import { FaArrowUpFromBracket } from "react-icons/fa6";
-import { RiArrowDownSLine } from "react-icons/ri";
+
 
 import { useState } from "react";
 
@@ -15,26 +15,91 @@ import { Button } from "../../components/Button";
 import { Menu } from "../../components/Menu";
 import { Link } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
+import { api } from "../../services/api";
+
 export function CreateDish() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const [image, setImage] = useState(null);
-  const [dish, setDish] = useState("");
+  const [name, setName] = useState("");
   const [category, setCategory] = useState("");
 
-  const [ingredients, setIngredients] = useState([]);
-  const [newIngredient, setNewIngredient] = useState("");
+  const [ingredients, setIngredients] = useState([]); //guarda todos
+  const [newIngredient, setNewIngredient] = useState(""); //guarda um só para passar para array
   const [price, setPrice] = useState("");
 
   const [description, setDescription] = useState("");
+
+  const navigate = useNavigate();
 
   function handleAddIngredients() {
     setIngredients((prevState) => [...prevState, newIngredient]);
     setNewIngredient("");
   }
 
-  function handleRemoveIngredient(deleted){
-    setIngredients(prevState => prevState.filter(ingredient => ingredient !== deleted))
+  function handleRemoveIngredient(deleted) {
+    setIngredients((prevState) =>
+      prevState.filter((ingredient) => ingredient !== deleted)
+    );
+  }
+
+  async function handleNewDish() {
+    // console.log({
+    //   //name,
+    //   //image,
+    //   // category,
+    //   // description,
+    //   // price,
+    //  ingredients,
+    // }); ingredients.map((ingredient) => formData.append("ingredients", ingredient));
+
+    if (!name) {
+      return alert("o campo de nome é obrigatorio 🙂")
+    }
+
+    if (!category) {
+      return alert("O campo de categoria é obrigatóio")
+    }
+
+    if (newIngredient) {
+      return alert(
+        "Você deixou uma tag no campo para adicionar,  mas não clicou em adicionar."
+      );
+    }
+
+    if (ingredients.length === 0) {
+      return alert("O campo ingredients é obrigatório")
+    }
+
+    if (!price) {
+      return alert("campo de preço obrigatório")
+    }
+
+    if (!description) {
+      return alert("O campo de Descrição é obrigatória ")
+    } 
+
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("category", category);
+    formData.append("price", price);
+
+    
+   // ingredients.map((ingredient) => formData.append("ingredients", JSON.stringify(ingredient)));
+
+   if (Array.isArray(ingredients)) {  //retorna true se for um array
+    ingredients.forEach((ingredient) => //percorre todos os itens ecoloca no formdata
+      formData.append("ingredients[]", ingredient)
+    );
+  }
+
+    await api.post("/dishes", formData);
+
+    alert("nota criada com sucesso");
+    navigate("/");
   }
 
   return (
@@ -67,7 +132,7 @@ export function CreateDish() {
                 id="name"
                 type="text"
                 placeholder="Ex: Salada ceasar"
-                onChange={(e) => setDish(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
               />
             </label>
 
@@ -93,7 +158,7 @@ export function CreateDish() {
                 {ingredients.map((ingredient, index) => (
                   <Ingredients
                     key={String(index)} //posição
-                    value={ingredient}//valores que estão armazenados o usestate
+                    value={ingredient} //valores que estão armazenados no usestate
                     onClick={() => handleRemoveIngredient(ingredient)} //quando tem que colocar parametro  precisa ser um arrow function
                   />
                 ))}
@@ -126,7 +191,7 @@ export function CreateDish() {
             />
           </label>
 
-          <Button title="Salvar alteracões" />
+          <Button title="Salvar alteracões" onClick={handleNewDish} />
         </Form>
       </main>
       <Footer />

@@ -1,32 +1,36 @@
 import { Container, Content } from "./style";
-import { Dishes } from "../../components/Dishes";
+import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { Section } from "../../components/Section";
 import { Footer } from "../../components/Footer";
 import { Slider } from "../../components/Slider";
 import { Menu } from "../../components/Menu";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { api } from "../../services/api";
+import { useGlobalStates } from "../../hooks/globalStates";
 
 import homeBanner from "../../assets/home-banner.png";
 
 import { SwiperSlide } from "swiper/react";
 
 export function Home() {
-  const [ menuIsOpen, setMenuIsOpen ] = useState(false);
+  const { dishes, setDishes } = useGlobalStates();
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  // const data = [
-  //   { id: "1", Image: homeBanner },
-  //   { id: "2", Image: homeBanner },
-  //   { id: "3", Image: homeBanner },
-  //   { id: "4", Image: homeBanner },
-  // ];
+  useEffect(() => {
+    async function fetchDishes() {
+      const res = await api.get(`/dishes`);
+      console.log(res.data);
+      setDishes(res.data);
+    }
+
+    fetchDishes();
+  }, []);
+
   return (
     <Container>
-      <Menu
-      menuIsOpen={menuIsOpen}
-      onCloseMenu={() => setMenuIsOpen(false)}
-      />
+      <Menu menuIsOpen={menuIsOpen} onCloseMenu={() => setMenuIsOpen(false)} />
       <Header onOpenMenu={() => setMenuIsOpen(true)} />
       <main>
         <Content>
@@ -42,25 +46,25 @@ export function Home() {
             </div>
           </header>
 
-            <Section title="refeições">
+          {dishes.filter((dish) => dish.category === "Refeições").length >
+            0 && (
+            <Section title="Refeições">
               <Slider>
-              <SwiperSlide>
-                  <Dishes
-                    data={{
-                      title: "Torradas de Parma",
-                      description:
-                        "Presunto de parma e rúcula em um pão com fermentação natural.",
-                      rating: "25,88",
-                    }}
-                  /> 
-                </SwiperSlide>            
+                {dishes
+                  .filter((dish) => dish.category === "Refeições")
+                  .map((meal, index) => (
+                    <SwiperSlide key={index}>
+                      <Card data={meal} />
+                    </SwiperSlide>
+                  ))}
               </Slider>
             </Section>
+          )}
 
-            <Section title="Sobremesas">
+          {/* <Section title="Sobremesas">
               <Slider>
               <SwiperSlide>
-                  <Dishes
+                  <Card
                     data={{
                       title: "Torradas de Parma",
                       description:
@@ -75,7 +79,7 @@ export function Home() {
             <Section title="Bebidas">
               <Slider>
               <SwiperSlide>
-                  <Dishes
+                  <Card
                     data={{
                       title: "Torradas de Parma",
                       description:
@@ -85,8 +89,7 @@ export function Home() {
                   /> 
                 </SwiperSlide>            
               </Slider>
-            </Section>
-        
+            </Section> */}
         </Content>
       </main>
       <Footer />
@@ -113,8 +116,8 @@ data={{
 //   </SwiperSlide>
 //  ))}
 
-
-{/* <SwiperSlide>
+{
+  /* <SwiperSlide>
                   <Dishes
                     data={{
                       title: "Torradas de Parma",
@@ -123,4 +126,5 @@ data={{
                       rating: "25,88",
                     }}
                   />
-                </SwiperSlide> */}
+                </SwiperSlide> */
+}
