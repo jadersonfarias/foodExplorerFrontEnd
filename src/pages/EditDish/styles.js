@@ -139,6 +139,8 @@ export const Form = styled.form`
 }
 
   .col-2 {
+    display: flex;
+    align-items: center;
     .ingredients {
       padding: 0.4rem;
       display: flex;

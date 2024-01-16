@@ -16,14 +16,14 @@ export function Card({data, ...rest }) {
 
   return (
     <Container {...rest}>
-       
+   
         <div className="like">
             <ButtonText icon={FiHeart} />
-      </div>
+       </div>
 
-      <img  src={`${api.defaults.baseURL}/files/avatarFilename/${data.image}`}
+      <img  src={`${api.defaults.baseURL}/files/${data.image}`} 
         alt="Plate img" className="i"/>
-      <h2>{data.name} &gt;</h2>
+      <h3>{data.name} &gt;</h3>
       <p className="hidden">{data.description}</p>
       <span>R&#36; {data.price}</span>
 
@@ -34,7 +34,7 @@ export function Card({data, ...rest }) {
           <ButtonText icon={GoPlus} />
         </div>
         <ButtonCard title="INCLUIR" />
-      </div>
+        </div>   
     </Container>
   );
 }

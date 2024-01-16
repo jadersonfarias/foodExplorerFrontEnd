@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const Container = styled.section`
-     margin: 5.6rem  0  0;
+     margin: 5.6rem  0  3rem;
     
 
       h2 {

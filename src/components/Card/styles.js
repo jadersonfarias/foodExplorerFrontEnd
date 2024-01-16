@@ -3,20 +3,24 @@ import { Button } from "../Button";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
-  max-width: 21.5rem;
-  height: 33rem;
+  width: 21.5rem;
+  height: 30rem;
   position: relative;
+
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  //justify-content: center;
+  justify-content: center;
 
-  background-color: ${({ theme }) => theme.COLORS.DARK['300']};
+  background-color: ${({ theme }) => theme.COLORS.DARK['200']};
+  border: 1px solid ${({ theme }) => theme.COLORS.DARK['300']};
  
-  margin-left: 5rem;
+
   padding: 2.1rem;
-  border-radius: .3rem;
+  border-radius: .6rem;
+
+
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
     width: 29rem;
@@ -27,9 +31,9 @@ export const Container = styled.div`
   > h2{
         font-size:1rem;
         line-height: 2.4rem;
+       
     } 
   
-
 
      .hidden {
       display: none;
@@ -53,20 +57,27 @@ export const Container = styled.div`
 
 
 
-> h2 {
-    width: 100%;
-    font-size: 1.6rem;
+> h3 {
+    font-size: 2.0rem;
     line-height: 2.4rem;
     text-align: center;
     color: ${({ theme }) => theme.COLORS.LIGHT["300"]};
 
-    white-space: nowrap;
+    margin-top: 2rem;
+
+    /* white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
-  }
+    text-overflow: ellipsis; */
+
+       display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 8;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  
 
   > p {
-    width: 100%;
     font-size: 1.4rem;
     text-align: center;
     color: ${({ theme }) => theme.COLORS.LIGHT["400"]};

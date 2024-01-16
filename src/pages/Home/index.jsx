@@ -54,7 +54,7 @@ export function Home() {
                   .filter((dish) => dish.category === "Refeições")
                   .map((meal, index) => (
                     <SwiperSlide key={index}>
-                      <Card data={meal} />
+                        <Card data={meal} />
                     </SwiperSlide>
                   ))}
               </Slider>

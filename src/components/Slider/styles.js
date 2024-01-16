@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export const Container = styled.div`
  .swiper {
@@ -12,24 +14,26 @@ export const Container = styled.div`
 
  .swiper-slide {
   display: flex;
- justify-content: center;
- ;
+  justify-content: center;
+ 
  
  }
 
  .swiper-pagination-bullet-active {   
   display: block;
+
  
  }
 
  .swiper-pagination-bullet {  
-  display: none;
+  display: block;
 
  }
 
  .swiper-button-prev {  
    color: ${({ theme }) => theme.COLORS.LIGHT['300']};    
    display: block;
+
   
  }
 
