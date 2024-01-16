@@ -25,7 +25,7 @@ export function Card({data, ...rest }) {
         alt="Plate img" className="i"/>
       <h3>{data.name} &gt;</h3>
       <p className="hidden">{data.description}</p>
-      <span>R&#36; {data.price}</span>
+      <span>{data.price}</span>
 
       <div className="bottom-card">
         <div className="amount">

@@ -35,12 +35,66 @@ export function EditDish() {
   const params = useParams();
 
   function handleBack() {
-    navigate(-1);
+    navigate("/");
+  }
+
+  async function handleUpdateDishes() {
+    if (!image) {
+      return alert("Obrigatório ter uma image para o prato!")
+    }
+
+    if (!category) {
+      return alert("precisa haver uma categoria!")
+    }
+
+    if (!ingredients) {
+      return alert("Ingredientes obrigatório!")
+    }
+
+    if (!price) {
+      return alert("Obrigatório ter um preço pois se não fica de graça!")
+    }
+
+    if (!description) {
+      return alert("Essa descrição é obrigatória.")
+    }
+
+     console.log({
+    //    name,
+    //    image,
+    //    category,
+    //   description,
+    //    price,
+       ingredients
+      })
+
+    if (newIngredient) {
+      return alert(
+        "Você deixou um ingrediente no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio."
+      );
+    }
+
+    const formData = new FormData()
+    formData.append("image", image)
+    formData.append("name", name)
+    formData.append("description", description)
+    formData.append("category", category)
+    formData.append("price", price)
+
+
+    ingredients.map((ingredient) => formData.append("ingredients", ingredient));
+
+    //console.log(formData)
+    await api.put(`/dishes/${1}`, formData);
+
+    alert("Prato atualizado com sucesso! 👌")
+
+    handleBack()
   }
 
   function handleAddIngredients() {
     //Impedir ingredients duplicados
-    if (!ingredients.includes(newIngredient) && newIngredient.length > 0) {
+    if (!ingredients.includes(newIngredient) && newIngredient.length > 0) {// Verifica se o novo ingrediente não está na lista e não é uma string vazia.
       setIngredients((prevState) => [...prevState, newIngredient]);
       setNewIngredient("");
     } else {
@@ -58,9 +112,8 @@ export function EditDish() {
     async function fetchDish() {
       const res = await api.get(`/dishes/${1}`); //pega os dados por id do user
 
-      const { name, image, description, category, price, ingredients } =
-        res.data;
-      console.log(res.data);
+      const { name, image, description, category, price, ingredients } = res.data;
+      //console.log(res.data);
 
       const ingredientList = ingredients.map((ingredient) => ingredient.title);
       
@@ -90,8 +143,9 @@ export function EditDish() {
             <ButtonText
               title="Voltar"
               icon={IoIosArrowBack}
-              to="/"
-              onClick={handleBack}
+              //to="/"
+              //onClick={handleBack}
+              onClick={handleUpdateDishes}
             />
             <h1>Editar prato</h1>
           </header>
@@ -138,7 +192,7 @@ export function EditDish() {
                 {ingredients.map((ingredient, index) => (
                   <Ingredients
                     key={String(index)}
-                    value={ingredients}
+                    value={ingredient}
                     onClick={() => handleRemoveIngredients(ingredient)}
                   />
                 ))}
@@ -178,8 +232,8 @@ export function EditDish() {
           </label>
           <div className="buttons">
             <button> excluir pratos </button>
-
-            <button>salvar alteracões</button>
+           
+            <button  >salvar alteracões</button>
           </div>
         </Form>
       </main>

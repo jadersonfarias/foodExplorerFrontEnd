@@ -177,6 +177,10 @@ export function CreateDish() {
               <Input
                 id="price"
                 placeholder="R$ 00,00"
+                value={price.toLocaleString("pt-br", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
                 onChange={(e) => setPrice(e.target.value)}
               />
             </label>
