@@ -61,6 +61,36 @@ export function Home() {
             </Section>
           )}
 
+{dishes.filter((dish) => dish.category === "Sobremesas").length >
+            0 && (
+            <Section title="Sobremesas">
+              <Slider>
+                {dishes
+                  .filter((dish) => dish.category === "Sobremesas")
+                  .map((meal, index) => (
+                    <SwiperSlide key={index}>
+                        <Card data={meal} />
+                    </SwiperSlide>
+                  ))}
+              </Slider>
+            </Section>
+          )}
+
+{dishes.filter((dish) => dish.category === "Bebidas").length >
+            0 && (
+            <Section title="Bebidas">
+              <Slider>
+                {dishes
+                  .filter((dish) => dish.category === "Bebidas")
+                  .map((meal, index) => (
+                    <SwiperSlide key={index}>
+                        <Card data={meal} />
+                    </SwiperSlide>
+                  ))}
+              </Slider>
+            </Section>
+          )}
+
           {/* <Section title="Sobremesas">
               <Slider>
               <SwiperSlide>

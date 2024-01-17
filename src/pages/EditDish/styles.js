@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "../../components/Button"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
@@ -156,3 +157,34 @@ export const Form = styled.form`
     }
   }
 `;
+
+export const ButtonPageNewDish = styled(Button)`  
+  margin: 2rem 0 5.3rem;
+  background-color: ${({ theme }) => theme.COLORS.TOMATO['400']};
+
+  width: 100%;
+
+  /* :nth-child(1) {
+    background-color: ${({ theme }) => theme.COLORS.DARK['800']};
+    transition: background-color 0.3s;
+  } */
+
+  :nth-child(1):hover {
+    background-color: ${({ theme }) => theme.COLORS.TOMATO['100']};
+    animation: pulse 1s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }  
+
+
+  `

@@ -1,4 +1,4 @@
-import { Container, Form } from "./styles";
+import { Container, Form, ButtonPageNewDish } from "./styles";
 
 import { IoIosArrowBack } from "react-icons/io";
 import { FaArrowUpFromBracket } from "react-icons/fa6";
@@ -92,6 +92,16 @@ export function EditDish() {
     handleBack()
   }
 
+  async function handleDelete() {
+    try {
+      alert("Desejas mesmo excluir este prato?")
+      await api.delete(`/dishes/${2}`)
+      navigate('/')
+    } catch (error) {
+      alert.error("Fala ao remover o prato, contate o desenvolvedor...")
+    }
+  }
+
   function handleAddIngredients() {
     //Impedir ingredients duplicados
     if (!ingredients.includes(newIngredient) && newIngredient.length > 0) {// Verifica se o novo ingrediente não está na lista e não é uma string vazia.
@@ -110,7 +120,7 @@ export function EditDish() {
 
   useEffect(() => {
     async function fetchDish() {
-      const res = await api.get(`/dishes/${1}`); //pega os dados por id do user
+      const res = await api.get(`/dishes/${2}`); //pega os dados por id do user
 
       const { name, image, description, category, price, ingredients } = res.data;
       //console.log(res.data);
@@ -144,8 +154,8 @@ export function EditDish() {
               title="Voltar"
               icon={IoIosArrowBack}
               //to="/"
-              //onClick={handleBack}
-              onClick={handleUpdateDishes}
+              onClick={handleBack}
+             
             />
             <h1>Editar prato</h1>
           </header>
@@ -231,9 +241,9 @@ export function EditDish() {
             />
           </label>
           <div className="buttons">
-            <button> excluir pratos </button>
+            <ButtonPageNewDish title="Excluir pratos" onClick={handleDelete}/>
            
-            <button  >salvar alteracões</button>
+            <ButtonPageNewDish title="salvar alteracões" onClick={handleUpdateDishes}/>
           </div>
         </Form>
       </main>
