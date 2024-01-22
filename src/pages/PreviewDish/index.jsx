@@ -1,7 +1,6 @@
 import { Container, Content, ButtonCard, Button_back } from "./styles";
 import { IoIosArrowBack } from "react-icons/io";
 
-import salada from "../../assets/salada.png";
 import { GoPlus } from "react-icons/go";
 import { FiMinus } from "react-icons/fi";
 
@@ -19,6 +18,7 @@ import { Menu } from "../../components/Menu";
 export function PreviewDish() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [data, setData] = useState(null);
+  const [amount, setAmount] = useState(0);
 
   const { user } = useAuth();
 
@@ -27,12 +27,23 @@ export function PreviewDish() {
   const navigate = useNavigate();
 
   function handleBack() {
-    navigate(-1);
+    navigate(-1)
+  }
+
+  function handleAmount(value){
+    if (value === "+") {
+      setAmount(amount + 1);
+    } else if (value === "-") {
+      if (amount === 0) {
+        return;
+      }
+      setAmount(amount - 1);
+    }
   }
 
   useEffect(() => {
     async function fetchDish() {
-      const res = await api.get(`/dishes/${5}`);
+      const res = await api.get(`/dishes/${params.id}`);
 
       setData(res.data);
     }
@@ -45,7 +56,11 @@ export function PreviewDish() {
       <Header onOpenMenu={() => setMenuIsOpen(true)} />
       {data && (
         <Content>
-          <Button_back title="voltar" icon={IoIosArrowBack} to="/" />
+          <Button_back
+            title="voltar"
+            icon={IoIosArrowBack}
+            onClick={handleBack}
+          />
           <section>
             <img src={`${api.defaults.baseURL}/files/${data.image}`} alt="" />
             <div className="container">
@@ -60,9 +75,15 @@ export function PreviewDish() {
 
               <div className="bottom-card">
                 <div className="amount">
-                  <ButtonText icon={FiMinus} />
-                  <p>01</p>
-                  <ButtonText icon={GoPlus} />
+                  <ButtonText
+                    icon={FiMinus}
+                    onClick={() => handleAmount("-")}
+                  />
+                  <p>{amount}</p>
+                  <ButtonText
+                    icon={GoPlus}
+                    onClick={() => handleAmount("+")}
+                  />
                 </div>
                 <ButtonCard title="INCLUIR" />
               </div>

@@ -1,140 +1,69 @@
 import styled from "styled-components";
-import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
-  width: 100%;
   height: 100vh;
-
-
-  display: grid;
-  grid-template-rows: 10.4rem auto 7.7rem;
-  grid-template-areas:
-    "header"
-    "content"
-    "footer";
-
-  > main {
-    padding-top: 13.2rem;
-    grid-area: content;
-    overflow-y: scroll;
-
-    width: 100%;
-  }
-
-  .slide-item {
-    width: 350px;
-    height: 350px;
-  }
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
-         main {
-            padding-top: 4.4rem;
-        }
-
-        
-    }
-`;
-
-export const Content = styled.div`
-  width: 112.2rem;
-
-  background-color: ${({ theme }) => theme.COLORS.DARK['400']};
-
-  margin: 0 auto;
-
   display: flex;
   flex-direction: column;
- 
+`;
 
+export const Main = styled.main`
+  flex: 1;
+`;
 
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
-        width: 34.0rem;
-        display: flex;
-        align-items: center;
-        
-        > section {
-    width: 57.8rem;
-  }
-       
-  }
-
-  > header {
-    height: 26rem;
-    border-radius: 0.8rem;
+export const BannerContainer = styled.div`
     display: flex;
-    align-items: center;
-    justify-content: end;
+    justify-content: space-between;
+
+    width: 80%;
+    height: 26.0rem;
+    background-color: ${({theme}) => theme.COLORS.DARK["400"]};
+
+    margin: auto;
+    margin-top: 16.2rem;
+    border-radius: .8rem;
+
     position: relative;
-    
-    
 
-    background: ${({ theme }) => theme.COLORS.GRADIENT["200"]};
-   > img {
-      display: block;
-      width: 63.2rem;
-      height: 40.6rem;
+`
 
-      position: absolute;
-      left: -4rem;
-      bottom: -1rem;
-    }
+export const MainContent = styled.div`
+        margin : auto;
+        width: 80%;
+`
 
-    div {
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-        height: 12rem;
-        margin-bottom: 4.2rem;
-        
+
+export const BannerImage = styled.img`
+        display: block;
+        max-width: 60.0rem;
+        max-height: 40.0rem;
+
+        position: absolute;
+        bottom: -1rem;
+        left: -6rem;
+
+
+`
+
+export const BannerContent = styled.div`
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      height: 100%;
+      width: 50%;
+
       h1 {
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        font-size: 4rem;
-        line-height: 140%;
-
-        margin-bottom: 0.3rem;
-        margin-right: 3rem;
+        font-family: Poppins;
+        font-size: 4.0rem;
+        font-weight: 500;
+        line-height: 5.6rem;
       }
 
       p {
+        font-family: Roboto;
         font-size: 1.6rem;
-        line-height: 140%;
+     
       }
-    }
-
-    
-
-    @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
-        height: 12.0rem;
-        width: 57.6rem;
-        
-        img {
-            height: 14.9rem;
-            width: 21.0rem;
-
-            left: -4rem;
-            bottom: -.4rem;
-        }
-
-        div {
-
-             margin-right: 3rem;
-
-            h1 {
-                font-size: 1.9rem;
-            }
-
-            p {
-                font-size: 1.3rem;
-            }
-        }
-    }
-
-    @media (max-width: ${DEVICE_BREAKPOINTS.SM}){
-           
-    }
-  }
-
-
-`;
+      
+`

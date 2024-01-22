@@ -1,4 +1,11 @@
-import { Container, Content } from "./style";
+import {
+  Container,
+  Main,
+  BannerContainer,
+  MainContent,
+  BannerImage,
+  BannerContent,
+} from "./style";
 import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { Section } from "../../components/Section";
@@ -32,20 +39,21 @@ export function Home() {
     <Container>
       <Menu menuIsOpen={menuIsOpen} onCloseMenu={() => setMenuIsOpen(false)} />
       <Header onOpenMenu={() => setMenuIsOpen(true)} />
-      <main>
-        <Content>
-          <header>
-            <img
+      <Main>
+        <BannerContainer>
+          <div>
+            <BannerImage
               src={homeBanner}
               alt="Macarons coloridos em tons pastel despencando juntamente com folhas verdes e frutas frescas."
             />
+          </div>
 
-            <div>
-              <h1>Sabores inigualáveis</h1>
-              <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
-            </div>
-          </header>
-
+          <BannerContent>
+            <h1>Sabores inigualáveis</h1>
+            <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
+          </BannerContent>
+        </BannerContainer>
+        <MainContent>
           {dishes.filter((dish) => dish.category === "Refeições").length >
             0 && (
             <Section title="Refeições">
@@ -54,14 +62,14 @@ export function Home() {
                   .filter((dish) => dish.category === "Refeições")
                   .map((meal, index) => (
                     <SwiperSlide key={index}>
-                        <Card data={meal} />
+                      <Card data={meal} />
                     </SwiperSlide>
                   ))}
               </Slider>
             </Section>
           )}
 
-{dishes.filter((dish) => dish.category === "Sobremesas").length >
+          {dishes.filter((dish) => dish.category === "Sobremesas").length >
             0 && (
             <Section title="Sobremesas">
               <Slider>
@@ -69,92 +77,95 @@ export function Home() {
                   .filter((dish) => dish.category === "Sobremesas")
                   .map((meal, index) => (
                     <SwiperSlide key={index}>
-                        <Card data={meal} />
+                      <Card data={meal} />
                     </SwiperSlide>
                   ))}
               </Slider>
             </Section>
           )}
 
-{dishes.filter((dish) => dish.category === "Bebidas").length >
-            0 && (
+          {dishes.filter((dish) => dish.category === "Bebidas").length > 0 && (
             <Section title="Bebidas">
               <Slider>
                 {dishes
                   .filter((dish) => dish.category === "Bebidas")
                   .map((meal, index) => (
                     <SwiperSlide key={index}>
-                        <Card data={meal} />
+                      <Card data={meal} />
                     </SwiperSlide>
                   ))}
               </Slider>
             </Section>
           )}
-
-          {/* <Section title="Sobremesas">
-              <Slider>
-              <SwiperSlide>
-                  <Card
-                    data={{
-                      title: "Torradas de Parma",
-                      description:
-                        "Presunto de parma e rúcula em um pão com fermentação natural.",
-                      rating: "25,88",
-                    }}
-                  /> 
-                </SwiperSlide>            
-              </Slider>
-            </Section>
-
-            <Section title="Bebidas">
-              <Slider>
-              <SwiperSlide>
-                  <Card
-                    data={{
-                      title: "Torradas de Parma",
-                      description:
-                        "Presunto de parma e rúcula em um pão com fermentação natural.",
-                      rating: "25,88",
-                    }}
-                  /> 
-                </SwiperSlide>            
-              </Slider>
-            </Section> */}
-        </Content>
-      </main>
-      <Footer />
+        </MainContent>
+      </Main>
+      <Footer/>
     </Container>
   );
 }
 
 {
-  /* <Dishes
-data={{
-  title: "Torradas de Parma",
-  description:
-    "Presunto de parma e rúcula em um pão com fermentação natural.",
-  rating: "25,88",
-}} */
-}
+  /* <main>
+<Content>
+  <header>
+    <img
+      src={homeBanner}
+      alt="Macarons coloridos em tons pastel despencando juntamente com folhas verdes e frutas frescas."
+    />
 
-// {data.map((item) => (
-//   <SwiperSlide key={item.id}>
-//     <img src={item.Image}
-//       alt="slider"
-//       className="slide-item"
-//       />
-//   </SwiperSlide>
-//  ))}
+    <div>
+      <h1>Sabores inigualáveis</h1>
+      <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
+    </div>
+  </header>
 
-{
-  /* <SwiperSlide>
-                  <Dishes
-                    data={{
-                      title: "Torradas de Parma",
-                      description:
-                        "Presunto de parma e rúcula em um pão com fermentação natural.",
-                      rating: "25,88",
-                    }}
-                  />
-                </SwiperSlide> */
+  {dishes.filter((dish) => dish.category === "Refeições").length >
+    0 && (
+    <Section title="Refeições">
+      <Slider>
+        {dishes
+          .filter((dish) => dish.category === "Refeições")
+          .map((meal, index) => (
+            <SwiperSlide key={index}>
+                <Card data={meal} />
+            </SwiperSlide>
+          ))}
+      </Slider>
+    </Section>
+  )}
+
+{dishes.filter((dish) => dish.category === "Sobremesas").length >
+    0 && (
+    <Section title="Sobremesas">
+      <Slider>
+        {dishes
+          .filter((dish) => dish.category === "Sobremesas")
+          .map((meal, index) => (
+            <SwiperSlide key={index}>
+                <Card data={meal} />
+            </SwiperSlide>
+          ))}
+      </Slider>
+    </Section>
+  )}
+
+{dishes.filter((dish) => dish.category === "Bebidas").length >
+    0 && (
+    <Section title="Bebidas">
+      <Slider>
+        {dishes
+          .filter((dish) => dish.category === "Bebidas")
+          .map((meal, index) => (
+            <SwiperSlide key={index}>
+                <Card data={meal} />
+            </SwiperSlide>
+          ))}
+      </Slider>
+    </Section>
+  )}
+
+  
+</Content>
+</main>
+<Footer /> */
 }

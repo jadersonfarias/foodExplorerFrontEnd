@@ -27,7 +27,7 @@ export function CreateDish() {
 
   const [ingredients, setIngredients] = useState([]); //guarda todos
   const [newIngredient, setNewIngredient] = useState(""); //guarda um só para passar para array
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState(0);
 
   const [description, setDescription] = useState("");
 
@@ -177,11 +177,7 @@ export function CreateDish() {
               <Input
                 id="price"
                 placeholder="R$ 00,00"
-                value={price.toLocaleString("pt-br", {
-                  style: "currency",
-                  currency: "BRL",
-                })}
-                onChange={(e) => setPrice(e.target.value)}
+                onChange={(e) => setPrice(Number(e.target.value))}
               />
             </label>
           </section>

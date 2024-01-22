@@ -2,11 +2,12 @@ import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
 export const Container = styled.div`
-    grid-area: footer;
+   // grid-area: footer;
+    min-height: 7.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    //padding: 0 12.3rem 0 12.3rem ;
+ 
     gap: 50.0rem;
     background: ${({ theme }) => theme.COLORS.DARK['700']};
 
@@ -29,18 +30,15 @@ export const Container = styled.div`
 
 `
 
-export const Logo = styled.div`
+export const LogoContainer = styled.div`
         display: flex;
+        align-items: center;
         gap: 1rem;
         color: ${({theme}) => theme.COLORS.LIGHT['700']};
 
         font-size: 1rem;
         font-weight: 700;
 
-        > img {
-            width: 2rem;
-            color: ${({theme}) => theme.COLORS.LIGHT['700']};
-        }
 
      
 

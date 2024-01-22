@@ -1,11 +1,20 @@
-import { Container } from "./styles"
+import { Container } from "./styles";
 import LogoExplorer from "../../assets/logoExplorer.svg";
 
-export function Logo(){
-    return(
-        <Container>
-             <img src={LogoExplorer} alt="logo" />
-             <h1>Food Explorer</h1>
-        </Container>
-    )
+export function Logo(props) {
+  return (
+    <svg
+      width="27"
+      height="28"
+      viewBox="0 0 27 30"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        id="Polygon 1"
+        d="M13.5391 0L26.5294 7.5V22.5L13.5391 30L0.548681 22.5V7.5L13.5391 0Z"
+        fill={props.fill}
+      />
+    </svg>
+  );
 }

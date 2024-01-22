@@ -1,13 +1,14 @@
-import { Container, Logo } from "./styles";
+import { Container, LogoContainer} from "./styles";
+import { Logo } from "../Logo";
 import LogoExplorer from "../../assets/logoExplorer.svg";
 
 export function Footer() {
   return (
     <Container>
-      <Logo>
-        <img src={LogoExplorer} alt="" />
+      <LogoContainer>
+        <Logo fill="#4D585E"/>
         <h1>Food Explorer</h1>
-      </Logo>
+      </LogoContainer>
 
       <span>© 2023 - Todos os direitos reservados.</span>
     </Container>
