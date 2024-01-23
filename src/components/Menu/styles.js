@@ -1,22 +1,20 @@
 import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
+import { Export } from "@phosphor-icons/react";
 
 export const Container = styled.aside`
    position: fixed;
    display: flex;
-   justify-content: space-between;
    flex-direction: column;
-   
-   width: 100%;
-   min-height: 100vh;
+
+    height: 100vh;
+    width: 100%;
   
     transform: translate(-200%);
     transition: transform 0.3s ease-in-out;;
 
-
- 
-  position: absolute;
-  z-index: 99;
+  
+    z-index: 55;
 
  
 
@@ -31,54 +29,78 @@ export const Container = styled.aside`
   }
 `;
 
-export const Header = styled.header`
+export const MenuHeader = styled.header`
+  height: 11.4rem;
   display: flex;
-  align-items: end;
+  align-items: center;
+  
 
-  padding: 0 2.8rem 2.8rem;
-
+ 
   background-color: ${({ theme }) => theme.COLORS.DARK["600"]};
 
-  > button {
+   button {
     background: none;
     border: none;
-    position: relative;
-
-   > h1 {
-      margin-left: 3rem;
+    font-size: 2.1rem;
+    padding-right: 59rem;
+    }
+   svg {
+     font-size: 4.8rem;
+   }
+    h1 {
       font-size: 2.4rem;
     }
-svg{
-  font-size: 2.4rem;
-  position: absolute;
-  left: 0.4rem;
-  top: 0.3rem;
-}
 
     color: ${({ theme }) => theme.COLORS.LIGHT["100"]};
 
-  }
+  
 `;
 
-export const Content = styled.div`
-  flex: 1;
-  padding: 3.2rem 3.2rem 0 3.2rem;
+export const ButtonMenu = styled.button`
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      
+      margin-left: 4rem;
+      
+      svg{
+        font-size: 2.8rem;
+      }
+
+      h1 {
+        font-family: Roboto;
+        font-size: 2.0rem;
+      }
+
+      color: ${({theme}) => theme.COLORS.LIGHT["100"]};
+`
+
+export const Main = styled.main`
+  flex: 1;  
+ 
+ 
   background-color: ${({ theme }) => theme.COLORS.DARK["500"]};
 `;
 
-export const Nav = styled.nav`
-  display: flex;
-  flex-direction: column;
-  font-family: poppins;
-  font-size: 2.4rem;
-  font-weight: 300;
+export const MainContent = styled.div`
+  padding-top: 3.6rem;
+  width: 67.0rem;
+  margin: auto;
 
-  :nth-child(1) {
+`
+
+export const Nav = styled.nav`
+    display: flex; 
+    flex-direction: column;
+    gap: 1.8rem;
+
+   :nth-child(1) {
     margin-top: 3.6rem;
   }
 
   a {
+    font-size: 2.4rem;
     color: white;
     border-bottom: 0.1rem solid ${({ theme }) => theme.COLORS.DARK["1000"]};
-  }
+  } 
 `;
