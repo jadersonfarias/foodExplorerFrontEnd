@@ -1,4 +1,12 @@
-import { Container, Content, ButtonCard, Button_back } from "./styles";
+import {
+  Container,
+  MainContent,
+  Main,
+  MainImage,
+  ButtonCard,
+  Button_back,
+  DishContent,
+} from "./styles";
 import { IoIosArrowBack } from "react-icons/io";
 
 import { GoPlus } from "react-icons/go";
@@ -27,10 +35,10 @@ export function PreviewDish() {
   const navigate = useNavigate();
 
   function handleBack() {
-    navigate(-1)
+    navigate(-1);
   }
 
-  function handleAmount(value){
+  function handleAmount(value) {
     if (value === "+") {
       setAmount(amount + 1);
     } else if (value === "-") {
@@ -55,15 +63,19 @@ export function PreviewDish() {
       <Menu menuIsOpen={menuIsOpen} onCloseMenu={() => setMenuIsOpen(false)} />
       <Header onOpenMenu={() => setMenuIsOpen(true)} />
       {data && (
-        <Content>
-          <Button_back
-            title="voltar"
-            icon={IoIosArrowBack}
-            onClick={handleBack}
-          />
-          <section>
-            <img src={`${api.defaults.baseURL}/files/${data.image}`} alt="" />
-            <div className="container">
+        <Main>
+<MainContent>
+         
+              <Button_back
+              title="voltar"
+              icon={IoIosArrowBack}
+              onClick={handleBack}
+            />
+            <MainImage
+              src={`${api.defaults.baseURL}/files/${data.image}`}
+              alt="prato"
+            />
+            <DishContent>
               <h1>{data.name}</h1>
               <p>{data.description}</p>
 
@@ -80,16 +92,13 @@ export function PreviewDish() {
                     onClick={() => handleAmount("-")}
                   />
                   <p>{amount}</p>
-                  <ButtonText
-                    icon={GoPlus}
-                    onClick={() => handleAmount("+")}
-                  />
+                  <ButtonText icon={GoPlus} onClick={() => handleAmount("+")} />
                 </div>
                 <ButtonCard title="INCLUIR" />
               </div>
-            </div>
-          </section>
-        </Content>
+            </DishContent>
+          </MainContent>
+        </Main>
       )}
       <Footer />
       <Menu menuIsOpen={menuIsOpen} onCloseMenu={() => setMenuIsOpen(false)} />

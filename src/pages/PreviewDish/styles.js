@@ -6,48 +6,75 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 export const Container = styled.div`
   height: 100vh;
   width: 100%;
-  display: grid;
-  grid-template-rows: 10.4rem auto 7.7rem;
-  grid-template-areas:
-    "header"
-    "content"
-    "footer";
+  display: flex;
+  flex-direction: column;
 `;
 
-export const Content = styled.div`
-  grid-area: content;
-  padding: 5.6rem;
+export const Main = styled.main`
+  flex: 1;
+`;
+
+export const MainContent = styled.section`
+  padding-top: 3.5rem;
   margin: 0 12.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+
   position: relative;
 
   @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {
-    margin: 0 10.1rem;
-    section {
-      display: flex;
-      flex-direction: column;
-      text-align: justify;
-    }
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-    section {
-       img {
-        width: 21.3rem;
-        height: 21.3rem;
-      }
-    }
+    flex-direction: column;
 
-    .container {
-      h1 {
-        text-align: center;
-      }
-    }
+    text-align: center;
+
+    gap: 0;
+    
+    
+  }
+`;
+
+export const MainImage = styled.img`
+  display: block;
+  max-height: 25rem;
+  max-width: 25rem;
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    max-height: 20rem;
+    max-width: 20rem  
+  }
+`;
+export const DishContent = styled.div`
+  h1 {
+    font-family: Poppins;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 5.6rem;
+  }
+
+  p {
+    font-family: Poppins;
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    margin: 2.4rem 0;
+  }
+
+  .ingredient-tag {
+    display: flex;
+    gap: 1rem;
   }
 
   .bottom-card {
+    
     display: flex;
     align-items: center;
     gap: 2.4rem;
+    margin-top: 4.8rem;
   }
 
   .amount {
@@ -59,38 +86,36 @@ export const Content = styled.div`
   }
 
   .container {
-    margin-left: 4.3rem;
 
     > p {
       margin: 2.4rem 0 2.4rem 0;
     }
   }
-  section {
-    display: flex;
-    align-items: center;
 
-    .ingredient-tag {
-      display: flex;
-      align-items: start;
-
-      gap: 0.9rem;
-      margin-bottom: 4.8rem;
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    h1 {
+       font-size: 2.7rem;
     }
-
-   > img {
-      width: 26.3rem;
-      height: 26.3rem;
+    .bottom-card {
+      margin: 3rem 0;
     }
   }
 `;
-
 export const ButtonCard = styled(Button)`
   background: ${({ theme }) => theme.COLORS.TOMATO["100"]};
   width: 16.2rem;
-  height: 4.8rem;
+  height: 3.8rem;
 `;
 
 export const Button_back = styled(ButtonText)`
   position: absolute;
-  top: 1.5rem;
+  left: -3.5rem;
+  top: 2rem;
+  
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    top: 1rem;
+    left: -5rem;
+    
+  }
+
 `;
