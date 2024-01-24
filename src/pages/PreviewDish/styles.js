@@ -117,5 +117,10 @@ export const Button_back = styled(ButtonText)`
     left: -5rem;
     
   }
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    top: 1rem;
+    left: -12rem;
+    
+  }
 
 `;
