@@ -2,7 +2,7 @@ import { A11y, Navigation, Pagination } from 'swiper/modules'; // acessibilidade
 import 'swiper/css';// estilos css
 import 'swiper/css/navigation';    // estilos css
 import 'swiper/css/pagination';// estilos css
-import 'swiper/swiper-bundle.css';
+//import 'swiper/swiper-bundle.css';
 import { Swiper } from 'swiper/react';
 import { Container } from './styles';
 

@@ -84,15 +84,15 @@ export const BannerImage = styled.img`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.SM}){
-       max-width: 26rem;
+       max-width: 25rem;
        max-height: 18.9rem;
 
       bottom: -.6rem;
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-      width: 19.1rem;      
-      height: 14.9rem;
+      width: 17.1rem;      
+      height: 12.9rem;
 
       bottom: -.5rem;
       left: -2rem;
@@ -141,10 +141,10 @@ export const BannerContent = styled.div`
 
   @media (max-width: ${DEVICE_BREAKPOINTS.SM}){
       position: absolute;
-      left: 22rem;
+      left: 20rem;
 
       h1 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
 
     p {
@@ -155,14 +155,13 @@ export const BannerContent = styled.div`
 
     @media (max-width: ${DEVICE_BREAKPOINTS.XS}){
       position: absolute;
-      left: 17.5rem;
+      left: 16.5rem;
       h1 {
-      font-size: .9rem;
+      font-size: 1rem;
     }
 
     p {
-      width: 100%;
-      font-size: .7rem;
+      font-size: .8rem;
     }
   }
 

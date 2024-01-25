@@ -13,6 +13,7 @@ import { Footer } from "../../components/Footer";
 import { Slider } from "../../components/Slider";
 import { Menu } from "../../components/Menu";
 
+
 import { useState, useEffect } from "react";
 import { api } from "../../services/api";
 import { useGlobalStates } from "../../hooks/globalStates";

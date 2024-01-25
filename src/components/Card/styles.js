@@ -3,8 +3,8 @@ import { Button } from "../Button";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
-  width: 21.5rem;
-  height: 30rem;
+   max-width: 21.5rem;
+  min-height: 40rem; 
   position: relative;
 
 
@@ -58,16 +58,16 @@ export const Container = styled.div`
 
 
 > h3 {
+    padding: 2rem 0;
     font-size: 2.0rem;
     line-height: 2.4rem;
     text-align: center;
     color: ${({ theme }) => theme.COLORS.LIGHT["300"]};
 
-    margin-top: 2rem;
 
-    /* white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
+     white-space: nowrap;
+   
+
 
        display: -webkit-box;
       -webkit-box-orient: vertical;
@@ -93,6 +93,7 @@ export const Container = styled.div`
 
   > img {
     max-width: 8.8rem;
+  
   }
 
   .like {

@@ -33,19 +33,17 @@ export const MainContent = styled.section`
     text-align: center;
 
     gap: 0;
-    
-    
   }
 `;
 
 export const MainImage = styled.img`
   display: block;
-  max-height: 25rem;
-  max-width: 25rem;
+  max-height: 20rem;
+  max-width: 20rem;
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
     max-height: 20rem;
-    max-width: 20rem  
+    max-width: 20rem;
   }
 `;
 export const DishContent = styled.div`
@@ -70,9 +68,9 @@ export const DishContent = styled.div`
   }
 
   .bottom-card {
-    
     display: flex;
     align-items: center;
+
     gap: 2.4rem;
     margin-top: 4.8rem;
   }
@@ -86,7 +84,6 @@ export const DishContent = styled.div`
   }
 
   .container {
-
     > p {
       margin: 2.4rem 0 2.4rem 0;
     }
@@ -94,33 +91,51 @@ export const DishContent = styled.div`
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
     h1 {
-       font-size: 2.7rem;
+      font-size: 2.7rem;
     }
     .bottom-card {
       margin: 3rem 0;
+      justify-content: center;
     }
-  }
+
+    .ingredient-tag {
+        justify-content: center;
+      }
+}
+  
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
+    h1 {
+      font-size: 2.5rem;
+    }
+      .ingredient-tag {
+        justify-content: center;
+      }
+}
 `;
 export const ButtonCard = styled(Button)`
   background: ${({ theme }) => theme.COLORS.TOMATO["100"]};
-  width: 16.2rem;
+  max-width: 16.2rem;
   height: 3.8rem;
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+  
+}
+
+
 `;
 
 export const Button_back = styled(ButtonText)`
   position: absolute;
   left: -3.5rem;
   top: 2rem;
-  
+
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
     top: 1rem;
     left: -5rem;
-    
   }
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
     top: 1rem;
     left: -12rem;
-    
   }
-
 `;

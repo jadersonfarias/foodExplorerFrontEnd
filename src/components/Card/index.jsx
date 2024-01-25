@@ -45,11 +45,11 @@ export function Card({ data, ...rest }) {
         <ButtonText icon={FiHeart} />
       </div>
 
-      <img
+       <img
         src={`${api.defaults.baseURL}/files/${data.image}`}
         alt="Plate img"
         className="i"
-      />
+      /> 
       <h3>{data.name} &gt;</h3>
       <p className="hidden">{data.description}</p>
       <span>{price.toLocaleString("pt-br", {

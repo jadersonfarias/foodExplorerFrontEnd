@@ -24,11 +24,15 @@ export const Form = styled.form`
   }
 
   @media(max-width: ${DEVICE_BREAKPOINTS.MD}){
-    width: 45.6rem;
+    width: 55.6rem;
     section{
         display: flex;
         flex-direction: column;
     }
+
+    @media(max-width: ${DEVICE_BREAKPOINTS.SM}){
+       max-width: 45rem;
+  }
 
     .buttons {
        button{
@@ -159,7 +163,7 @@ export const Form = styled.form`
 `;
 
 export const ButtonPageNewDish = styled(Button)`  
-  margin: 2rem 0 5.3rem;
+  margin: 2rem 0 .3rem;
   background-color: ${({ theme }) => theme.COLORS.TOMATO['400']};
 
   width: 100%;

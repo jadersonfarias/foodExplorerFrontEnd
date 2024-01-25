@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
  .swiper {
-  padding: .2rem;
+  padding: 32px;
  }
 
  .swiper-button-custom {
@@ -20,7 +21,7 @@ export const Container = styled.div`
  }
 
  .swiper-pagination-bullet-active {   
-  display: block;
+  display: none;
 
  
  }
@@ -31,14 +32,16 @@ export const Container = styled.div`
  }
 
  .swiper-button-prev {  
-   color: ${({ theme }) => theme.COLORS.LIGHT['300']};    
+   color: ${({ theme }) => theme.COLORS.LIGHT['100']};    
    display: block;
 
   
  }
 
  .swiper-button-next { 
-    color: ${({ theme }) => theme.COLORS.LIGHT['300']};    
+    color: ${({ theme }) => theme.COLORS.LIGHT['100']};    
    display:block;
  }
+
+ 
   `

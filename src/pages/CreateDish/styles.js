@@ -21,11 +21,11 @@ export const Form = styled.form`
   margin: 4rem auto 11.6rem;
 
   @media(max-width: ${DEVICE_BREAKPOINTS.LG}){
-       width: 85rem;
+       max-width: 85rem;
   }
 
   @media(max-width: ${DEVICE_BREAKPOINTS.MD}){
-    width: 50.6rem;
+    max-width: 50.6rem;
     section{
         display: flex;
         flex-direction: column;
@@ -119,7 +119,7 @@ export const Form = styled.form`
       box-shadow: none;
 
       cursor: pointer;
-      transition: filter 0.2s;
+      transition: filter 0.3s;
     }
   }
 
