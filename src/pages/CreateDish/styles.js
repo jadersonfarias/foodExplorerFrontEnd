@@ -120,7 +120,11 @@ export const Form = styled.form`
 
       cursor: pointer;
       transition: filter 0.3s;
+
+
     }
+
+
   }
 
 
@@ -138,6 +142,10 @@ export const Form = styled.form`
       height: auto;
       background-color: ${({ theme }) => theme.COLORS.DARK["800"]};
     }
+
+    
+
+  
   }
 
   > Button {

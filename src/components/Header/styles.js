@@ -34,7 +34,7 @@ export const Container = styled.div`
     `
 
 export const Search = styled.div`
-    width: 48.0rem;
+    width: 40.0rem;
     margin-top: 1rem;
 
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
@@ -49,23 +49,44 @@ export const Search = styled.div`
 
 `
 
-export const Logo = styled.div`
-        width: 19.6rem;
+export const HeaderLogo = styled.div`
+        max-width: 19.6rem;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
+        flex-direction: column;
+        align-items: end;
+     
+    
 
-        font-size: 1.2rem;
-        font-weight: 700;
+        p {
+          color: ${({theme}) => theme.COLORS.CAKE['100']};
+          font-size: 1.2rem;
+        }
 
         @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-        
+           flex-direction: row;
+           align-items: center;
+           gap: 1rem;
 
      }     
 
 
 `
+
+export const LogoImg = styled.div`
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      font-family: Roboto;
+      font-size: 1.8rem;
+      
+
+      @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+          font-size: 1.4rem;
+      }
+
+`
+
 export const Request = styled.div`
         width: 20.6rem;
         display: flex;
