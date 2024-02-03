@@ -15,7 +15,7 @@ export const Main = styled.main`
 `;
 
 export const MainContent = styled.section`
-  padding-top: 3.5rem;
+  padding-top: 10.5rem;
   margin: 0 12.1rem;
   display: flex;
   align-items: center;
@@ -25,9 +25,11 @@ export const MainContent = styled.section`
   position: relative;
 
   @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {
+    padding-top: 7rem;
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    padding-top:5.5rem;
     flex-direction: column;
 
     text-align: center;

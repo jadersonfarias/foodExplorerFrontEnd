@@ -102,6 +102,10 @@ export function CreateDish() {
     navigate("/");
   }
 
+  function handleBack(){
+    navigate("/")
+  }
+
   return (
     <Container>
       <Menu menuIsOpen={menuIsOpen} onCloseMenu={() => setMenuIsOpen(false)} />
@@ -109,7 +113,7 @@ export function CreateDish() {
       <main>
         <Form>
           <header>
-            <ButtonText title="Voltar" icon={IoIosArrowBack} to="/" />
+            <ButtonText title="Voltar" icon={IoIosArrowBack} onClick={handleBack} />
             <h1>Adicionar prato</h1>
           </header>
           <section className="col-1">

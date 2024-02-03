@@ -14,6 +14,7 @@ import { PiReceiptBold } from "react-icons/pi";
 import { FaSearch } from "react-icons/fa";
 
 import { useAuth } from "../../hooks/auth";
+import { useNavigate } from "react-router-dom";
 
 import { List, Receipt } from "@phosphor-icons/react";
 
@@ -27,6 +28,8 @@ export function Header({ onOpenMenu, children, ...rest }) {
   const { signOut, user } = useAuth();
   const { search, setSearch, setDishes } = useGlobalStates();
 
+  const navigate = useNavigate()
+
   async function handleSearch(e) {
     if (e.key === "Enter") {
       const res = await api.get(`/dishes?search=${search}`);
@@ -36,6 +39,10 @@ export function Header({ onOpenMenu, children, ...rest }) {
   }
   function handleChange(e) {
     setSearch(e.target.value);
+  }
+
+  function handleCreateDish(){
+    navigate("/CreateDish");
   }
 
   return (
@@ -65,8 +72,8 @@ export function Header({ onOpenMenu, children, ...rest }) {
           <Button icon={PiReceiptBold} title="pedidos (0)" />
         }
 
-    {[USER_ROLE.ADMIN].includes(user.role) &&
-          <Button  title="Novo Prato" />
+      {[USER_ROLE.ADMIN].includes(user.role) &&
+          <Button  title="Novo Prato" onClick={handleCreateDish}/>
         }
         
       </Request>

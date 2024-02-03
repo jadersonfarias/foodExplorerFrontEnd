@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
+import { USER_ROLE } from "../../services/utils/roles"
 
 import { ButtonText } from "../../components/ButtonText";
 import { Header } from "../../components/Header";
@@ -26,17 +27,24 @@ import { Menu } from "../../components/Menu";
 export function PreviewDish() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [data, setData] = useState(null);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
+ const [price, setPrice] = useState(1);
 
   const { user } = useAuth();
 
   const params = useParams();
+  console.log(params)
 
   const navigate = useNavigate();
 
   function handleBack() {
     navigate(-1);
   }
+
+  useEffect(() => {
+  ///setPrice(data.price * amount);
+  
+   }, [amount]);
 
   function handleAmount(value) {
     if (value === "+") {
@@ -94,7 +102,9 @@ export function PreviewDish() {
                   <p>{amount}</p>
                   <ButtonText icon={GoPlus} onClick={() => handleAmount("+")} />
                 </div>
-                <ButtonCard title="INCLUIR" />
+                {[USER_ROLE.ADMIN].includes(user.role) && (
+                    <ButtonCard title={`Incluir ${price}`} />
+                )}
               </div>
             </DishContent>
           </MainContent>

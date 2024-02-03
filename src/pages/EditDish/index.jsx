@@ -28,6 +28,8 @@ export function EditDish() {
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
 
+  
+
   const { user } = useAuth();
 
   const navigate = useNavigate();
@@ -65,7 +67,7 @@ export function EditDish() {
     //    category,
     //   description,
     //    price,
-       ingredients
+     //  ingredients
       })
 
     if (newIngredient) {
@@ -85,8 +87,8 @@ export function EditDish() {
     ingredients.map((ingredient) => formData.append("ingredients", ingredient));
 
     //console.log(formData)
-    await api.put(`/dishes/${1}`, formData);
-
+    await api.put(`/dishes/${params.id}`, formData);
+  
     alert("Prato atualizado com sucesso! 👌")
 
     handleBack()
@@ -95,7 +97,7 @@ export function EditDish() {
   async function handleDelete() {
     try {
       alert("Desejas mesmo excluir este prato?")
-      await api.delete(`/dishes/${2}`)
+      await api.delete(`/dishes/${params.id}`)
       navigate('/')
     } catch (error) {
       alert.error("Fala ao remover o prato, contate o desenvolvedor...")
@@ -120,10 +122,10 @@ export function EditDish() {
 
   useEffect(() => {
     async function fetchDish() {
-      const res = await api.get(`/dishes/${2}`); //pega os dados por id do user
+      const res = await api.get(`/dishes/${params.id}`); //pega os dados por id do user
 
       const { name, image, description, category, price, ingredients } = res.data;
-      //console.log(res.data);
+      console.log(res.data);
 
       const ingredientList = ingredients.map((ingredient) => ingredient.title);
       

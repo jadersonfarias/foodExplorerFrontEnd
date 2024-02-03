@@ -13,7 +13,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  background-color: ${({ theme }) => theme.COLORS.DARK['200']};
+  background-color: ${({ theme }) => theme.COLORS.DARK['700']};
   border: 1px solid ${({ theme }) => theme.COLORS.DARK['300']};
  
 
