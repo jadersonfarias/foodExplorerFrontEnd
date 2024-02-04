@@ -33,7 +33,7 @@ export function PreviewDish() {
   const { user } = useAuth();
 
   const params = useParams();
-  console.log(params)
+
 
   const navigate = useNavigate();
 
@@ -42,7 +42,7 @@ export function PreviewDish() {
   }
 
   useEffect(() => {
-  ///setPrice(data.price * amount);
+ // setPrice(data.price * amount);
   
    }, [amount]);
 
@@ -102,8 +102,11 @@ export function PreviewDish() {
                   <p>{amount}</p>
                   <ButtonText icon={GoPlus} onClick={() => handleAmount("+")} />
                 </div>
-                {[USER_ROLE.ADMIN].includes(user.role) && (
+                {[USER_ROLE.CUSTOMER].includes(user.role) && (
                     <ButtonCard title={`Incluir ${price}`} />
+                )}
+                   {[USER_ROLE.ADMIN].includes(user.role) && (
+                    <ButtonCard title="Editar prato" />
                 )}
               </div>
             </DishContent>

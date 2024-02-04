@@ -21,6 +21,14 @@ export function Card({ data, ...rest }) {
   const [amount, setAmount] = useState(1);
   const [price, setPrice] = useState(Number(data.price));
 
+  const [isLiked, setIsLiked] = useState(false);
+
+  function handleLike() {
+    // Inverta o estado de curtida ao clicar no ícone de coração
+    setIsLiked((prevIsLiked) => !prevIsLiked);
+    
+  }
+
   function handleNavigate() {
     navigate(`/PreviewDish/${data.id}`);
   }
@@ -45,7 +53,8 @@ export function Card({ data, ...rest }) {
     <Container {...rest} >
       <div className="like">
         {[USER_ROLE.CUSTOMER].includes(user.role) && (
-          <ButtonText icon={FiHeart} />
+          <ButtonText icon={FiHeart} onClick={handleLike}
+          style={{ color: isLiked ? '#065E7C' : 'white' }} />
         )}
 
       {[USER_ROLE.ADMIN].includes(user.role) && (

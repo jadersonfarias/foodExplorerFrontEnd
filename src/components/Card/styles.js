@@ -93,7 +93,7 @@ export const Container = styled.div`
 
   > img {
     max-width: 8.8rem;
-  
+    
   }
 
   .like {

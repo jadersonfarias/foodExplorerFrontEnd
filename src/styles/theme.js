@@ -23,7 +23,7 @@ export default {
           },
           GRADIENT: {
             '100': 'linear-gradient(90deg, rgba(0, 10, 15, 0.272541) 0%, #000A0F 100%)',
-            '200': 'linear-gradient(180deg, #091E26 0%, #00131C 100%)'
+            '200': 'linear-gradient(190deg, #091E26 0%, #00131C 90%)'
           },
           TOMATO: {
             '100': '#750310',

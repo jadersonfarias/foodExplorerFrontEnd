@@ -18,6 +18,17 @@ export const Container = styled.div`
     }
 
 `
+export const LogoAuth = styled.div`
+     display: flex;
+     align-items: center;
+     gap: 2rem;
+
+    font-family: Roboto;
+    font-size: 3.0rem;
+
+
+
+`
 
 export const Form = styled.form`
     width: 44.0rem;

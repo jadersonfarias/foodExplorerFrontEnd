@@ -4,8 +4,8 @@ import LogoExplorer from "../../assets/logoExplorer.svg";
 export function Logo(props) {
   return (
     <svg
-      width="27"
-      height="28"
+      width="30"
+      height="35"
       viewBox="0 0 27 30"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

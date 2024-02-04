@@ -81,11 +81,12 @@ export function Header({ onOpenMenu, children, ...rest }) {
       <Logout onClick={signOut}>
         <img src={SignOut} alt="sair" />
       </Logout>
-
+      {user.role === USER_ROLE.CUSTOMER && 
       <Receipt_mobile>
         <Receipt />
         <span>0</span>
       </Receipt_mobile>
+   } 
     </Container>
   );
 }

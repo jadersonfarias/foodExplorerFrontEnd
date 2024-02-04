@@ -23,7 +23,7 @@ export const Container = styled.div`
     background: transparent;
     border: 0;
 
-    font-size: 1.3rem;
+    font-size: 2.0rem;
     font-weight: 400;    
  }
   

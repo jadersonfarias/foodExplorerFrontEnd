@@ -19,8 +19,8 @@ export const Container = styled.div`
  
     justify-content: space-between;
 
-    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-        
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {    
+        gap: 12rem;
          
      }
 

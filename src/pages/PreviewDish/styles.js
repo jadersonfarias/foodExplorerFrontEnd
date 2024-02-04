@@ -40,8 +40,9 @@ export const MainContent = styled.section`
 
 export const MainImage = styled.img`
   display: block;
-  max-height: 20rem;
-  max-width: 20rem;
+  max-height: 36rem;
+  max-width: 36rem;
+
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
     max-height: 20rem;

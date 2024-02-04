@@ -2,13 +2,16 @@ import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
 export const Container = styled.div`
-   // grid-area: footer;
+
     min-height: 7.7rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:space-around;
+
+    h1 {
+        font-size: 2rem;
+    }
  
-    gap: 50.0rem;
     background: ${({ theme }) => theme.COLORS.DARK['700']};
 
     @media (max-width: ${DEVICE_BREAKPOINTS.LG}){

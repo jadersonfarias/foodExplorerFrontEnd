@@ -6,10 +6,12 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+ 
 `;
 
 export const Main = styled.main`
   flex: 1;
+ 
 `;
 
 export const BannerContainer = styled.div`
@@ -23,6 +25,7 @@ export const BannerContainer = styled.div`
   height: 26rem;
  
   background: ${({ theme }) => theme.COLORS.GRADIENT['200']};
+  background-color: aqua;
   margin-top: 16.2rem;
   border-radius: 0.8rem;
 
@@ -56,6 +59,9 @@ export const MainContent = styled.div`
   margin: auto;
   width: 90%;
   position: relative;
+  background: linear-gradient(to right, black, transparent 40%, transparent 40%, black);
+
+
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
    

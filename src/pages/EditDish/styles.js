@@ -144,21 +144,23 @@ export const Form = styled.form`
 }
 
   .col-2 {
-    display: flex;
-    align-items: center;
-    .ingredients {
-      padding: 0.4rem;
       display: flex;
+      align-items: center;
+      
+    .ingredients {
+      display: flex;
+      align-items: center;
 
       border-radius: 0.6rem;
 
-      padding: 0.3rem 0.8rem;
+      padding: 0.2rem 0.8rem;
       gap: 1.6rem;
 
       width: 100%;
       height: auto;
       background-color: ${({ theme }) => theme.COLORS.DARK["800"]};
     }
+  
   }
 `;
 

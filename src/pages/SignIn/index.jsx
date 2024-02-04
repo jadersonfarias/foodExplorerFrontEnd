@@ -1,7 +1,7 @@
-import { Container, Form } from "./styles";
+import { Container, Form, LogoAuth } from "./styles";
 import { Link } from "react-router-dom";
 import { Input } from "../../components/Input";
-import { Logo } from "../../components/logo";
+import LogoExplorer from "../../assets/LogoExplorer.svg";
 import { Button } from "../../components/Button";
 import { useAuth } from "../../hooks/auth";
 
@@ -23,7 +23,10 @@ export function SignIn() {
 
   return (
     <Container>
-      <Logo/>
+      <LogoAuth>
+        <img src={LogoExplorer} alt="" />
+        <h1>Food explorer</h1>
+      </LogoAuth>
       <Form>
         <h1>Faça login</h1>
         <div className="email">

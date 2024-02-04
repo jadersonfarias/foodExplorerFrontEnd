@@ -199,7 +199,8 @@ export function EditDish() {
           </section>
 
           <section className="col-2">
-            <label htmlFor="ingredientes">
+            <label htmlFor="Ingredientes">
+            Ingredientes
               <div className="ingredients">
                 {ingredients.map((ingredient, index) => (
                   <Ingredients
@@ -218,7 +219,7 @@ export function EditDish() {
                 />
               </div>
             </label>
-
+                
             <label htmlFor="price">
               Preço
               <Input
