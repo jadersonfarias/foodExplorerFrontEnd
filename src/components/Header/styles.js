@@ -19,7 +19,8 @@ export const Container = styled.div`
  
     justify-content: space-between;
 
-    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {    
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) { 
+     justify-content:start ;
         gap: 12rem;
          
      }
@@ -59,7 +60,8 @@ export const HeaderLogo = styled.div`
 
         p {
           color: ${({theme}) => theme.COLORS.CAKE['100']};
-          font-size: 1.2rem;
+          font-size: 1.4rem;
+      
         }
 
         @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {

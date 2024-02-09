@@ -17,6 +17,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 import { USER_ROLE } from "../../services/utils/roles"
+import { useGlobalStates } from "../../hooks/globalStates";
 
 import { ButtonText } from "../../components/ButtonText";
 import { Header } from "../../components/Header";
@@ -31,14 +32,19 @@ export function PreviewDish() {
  const [price, setPrice] = useState(1);
 
   const { user } = useAuth();
-
   const params = useParams();
+
+  const { setRequest } = useGlobalStates()
 
 
   const navigate = useNavigate();
 
   function handleBack() {
     navigate(-1);
+  }
+
+  function handleEditDish() {
+      navigate(`/editdish/${data.id}`)
   }
 
   useEffect(() => {
@@ -65,6 +71,10 @@ export function PreviewDish() {
     }
     fetchDish();
   }, []);
+
+  function handleRequest( ){
+    setRequest(amount)
+  }
 
   return (
     <Container>
@@ -103,10 +113,10 @@ export function PreviewDish() {
                   <ButtonText icon={GoPlus} onClick={() => handleAmount("+")} />
                 </div>
                 {[USER_ROLE.CUSTOMER].includes(user.role) && (
-                    <ButtonCard title={`Incluir ${price}`} />
+                    <ButtonCard title={`Incluir ${price}`}  onClick={handleRequest}/>
                 )}
                    {[USER_ROLE.ADMIN].includes(user.role) && (
-                    <ButtonCard title="Editar prato" />
+                    <ButtonCard title="Editar prato" onClick={handleEditDish}/>
                 )}
               </div>
             </DishContent>

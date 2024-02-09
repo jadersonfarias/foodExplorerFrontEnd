@@ -8,15 +8,16 @@ import { useAuth } from "../../hooks/auth";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { USER_ROLE } from "../../services/utils/roles";
+import { useGlobalStates } from "../../hooks/globalStates";
 
 import { api } from "../../services/api";
 
-import test from "../../assets/test.png";
 
 export function Card({ data, ...rest }) {
   const { user } = useAuth();
   const navigate = useNavigate();
-  const params = useParams();
+  const { setRequest, request } = useGlobalStates();
+
 
   const [amount, setAmount] = useState(1);
   const [price, setPrice] = useState(Number(data.price));
@@ -47,6 +48,11 @@ export function Card({ data, ...rest }) {
     } else if (value === "-" && amount > 1) {
       setAmount(amount - 1);
     }
+  }
+
+  function handleRequest(){
+    setRequest(amount);
+    console.log(request)
   }
 
   return (
@@ -83,7 +89,7 @@ export function Card({ data, ...rest }) {
           <p>{amount}</p>
           <ButtonText icon={GoPlus} onClick={() => handleAmount("+")} />
         </div>
-        <ButtonCard title="INCLUIR" />
+        <ButtonCard title="INCLUIR" onClick={handleRequest}/>
       </div>
     </Container>
   );

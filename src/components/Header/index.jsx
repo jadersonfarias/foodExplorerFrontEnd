@@ -26,7 +26,7 @@ import { USER_ROLE } from "../../services/utils/roles";
 
 export function Header({ onOpenMenu, children, ...rest }) {
   const { signOut, user } = useAuth();
-  const { search, setSearch, setDishes } = useGlobalStates();
+  const { search, setSearch, setDishes, request } = useGlobalStates();
 
   const navigate = useNavigate()
 
@@ -44,6 +44,10 @@ export function Header({ onOpenMenu, children, ...rest }) {
   function handleCreateDish(){
     navigate("/CreateDish");
   }
+
+
+
+
 
   return (
     <Container {...rest}>
@@ -69,7 +73,7 @@ export function Header({ onOpenMenu, children, ...rest }) {
 
       <Request>
         {[USER_ROLE.CUSTOMER].includes(user.role) &&
-          <Button icon={PiReceiptBold} title="pedidos (0)" />
+          <Button icon={PiReceiptBold} title={`pedido (${request})`}/>
         }
 
       {[USER_ROLE.ADMIN].includes(user.role) &&

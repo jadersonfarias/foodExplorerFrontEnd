@@ -145,7 +145,6 @@ export const Form = styled.form`
 
   .col-2 {
       display: flex;
-      align-items: center;
       
     .ingredients {
       display: flex;

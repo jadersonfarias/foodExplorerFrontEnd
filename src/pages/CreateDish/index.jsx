@@ -53,9 +53,12 @@ export function CreateDish() {
     //   // price,
     //  ingredients,
     // }); ingredients.map((ingredient) => formData.append("ingredients", ingredient));
+    if (!image) {
+      return alert("imagem obrigatoria")
+    }
 
     if (!name) {
-      return alert("o campo de nome é obrigatorio 🙂")
+      return alert("nome do prato  obrigatorio ")
     }
 
     if (!category) {
@@ -98,7 +101,7 @@ export function CreateDish() {
 
     await api.post("/dishes", formData);
 
-    alert("nota criada com sucesso");
+    alert("nota criada com sucesso! 👌");
     navigate("/");
   }
 

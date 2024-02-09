@@ -3,6 +3,7 @@ import { Button } from "../../components/Button";
 import { ButtonText } from "../../components/ButtonText";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
+
 export const Container = styled.div`
   height: 100vh;
   width: 100%;
@@ -20,7 +21,7 @@ export const MainContent = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  gap: 7rem;
 
   position: relative;
 

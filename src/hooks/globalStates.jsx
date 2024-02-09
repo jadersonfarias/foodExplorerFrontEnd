@@ -6,12 +6,15 @@ export const GlobalStatesContext = createContext({})
 function GlobalStatesProvider({ children }){ 
  const [search, setSearch] = useState("")
  const [dishes, setDishes] = useState([])
+ const [request, setRequest] = useState("0")
         return(
            <GlobalStatesContext.Provider value={{ 
                     setSearch,
                     search,
                     dishes,
-                    setDishes
+                    setDishes,
+                    request,
+                    setRequest
            }}>
                 {children}
            </GlobalStatesContext.Provider> 
