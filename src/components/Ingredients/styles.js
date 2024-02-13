@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   padding: 0.5rem;
   border-radius: 0.5rem;
-
+  
   display: flex;
   align-items: center;
   gap: .8rem;
@@ -40,7 +40,7 @@ export const Container = styled.div`
   > button {
     background: none;
     border: none;
- 
+
 
     > svg {
       width: 100%;

@@ -3,7 +3,7 @@ import { Button } from "../Button";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
-   max-width: 21.5rem;
+  min-width: 21.5rem;
   min-height: 40rem; 
   position: relative;
 
@@ -69,7 +69,7 @@ export const Container = styled.div`
    
 
 
-       display: -webkit-box;
+      display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 8;
       overflow: hidden;
@@ -100,6 +100,7 @@ export const Container = styled.div`
     position: absolute;
     right: 0.9rem;
     top: 1rem;
+  
   }
 
   .bottom-card {

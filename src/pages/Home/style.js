@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Main = styled.main`
   flex: 1;
- 
+  
 `;
 
 export const BannerContainer = styled.div`
@@ -25,7 +25,7 @@ export const BannerContainer = styled.div`
   height: 26rem;
  
   background: ${({ theme }) => theme.COLORS.GRADIENT['200']};
-  background-color: aqua;
+
   margin-top: 16.2rem;
   border-radius: 0.8rem;
 

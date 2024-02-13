@@ -12,12 +12,10 @@ import { useGlobalStates } from "../../hooks/globalStates";
 
 import { api } from "../../services/api";
 
-
 export function Card({ data, ...rest }) {
   const { user } = useAuth();
   const navigate = useNavigate();
   const { setRequest, request } = useGlobalStates();
-
 
   const [amount, setAmount] = useState(1);
   const [price, setPrice] = useState(Number(data.price));
@@ -27,7 +25,6 @@ export function Card({ data, ...rest }) {
   function handleLike() {
     // Inverta o estado de curtida ao clicar no ícone de coração
     setIsLiked((prevIsLiked) => !prevIsLiked);
-    
   }
 
   function handleNavigate() {
@@ -50,21 +47,24 @@ export function Card({ data, ...rest }) {
     }
   }
 
-  function handleRequest(){
+  function handleRequest() {
     setRequest(amount);
-    console.log(request)
+    console.log(request);
   }
 
   return (
-    <Container {...rest} >
+    <Container {...rest}>
       <div className="like">
         {[USER_ROLE.CUSTOMER].includes(user.role) && (
-          <ButtonText icon={FiHeart} onClick={handleLike}
-          style={{ color: isLiked ? '#065E7C' : 'white' }} />
+          <ButtonText
+            icon={FiHeart}
+            onClick={handleLike}
+            style={{ color: isLiked ? "#065E7C" : "white" }}
+          />
         )}
 
-      {[USER_ROLE.ADMIN].includes(user.role) && (
-        <ButtonText icon={GoPencil} onClick={handleNavigateEditDish}/>
+        {[USER_ROLE.ADMIN].includes(user.role) && (
+          <ButtonText icon={GoPencil} onClick={handleNavigateEditDish} />
         )}
       </div>
 
@@ -82,15 +82,17 @@ export function Card({ data, ...rest }) {
           currency: "BRL",
         })}
       </span>
-
+      {[USER_ROLE.CUSTOMER].includes(user.role) && (
       <div className="bottom-card">
         <div className="amount">
           <ButtonText icon={FiMinus} onClick={() => handleAmount("-")} />
           <p>{amount}</p>
           <ButtonText icon={GoPlus} onClick={() => handleAmount("+")} />
         </div>
-        <ButtonCard title="INCLUIR" onClick={handleRequest}/>
+        <ButtonCard title="INCLUIR" onClick={handleRequest} />
       </div>
+       )}
+      
     </Container>
   );
 }

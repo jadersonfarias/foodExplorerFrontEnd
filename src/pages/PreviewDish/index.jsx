@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
-import { USER_ROLE } from "../../services/utils/roles"
+import { USER_ROLE } from "../../services/utils/roles";
 import { useGlobalStates } from "../../hooks/globalStates";
 
 import { ButtonText } from "../../components/ButtonText";
@@ -29,29 +29,38 @@ export function PreviewDish() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [data, setData] = useState(null);
   const [amount, setAmount] = useState(1);
- const [price, setPrice] = useState(1);
+  const [price, setPrice] = useState(0);
+  const [isLoading, setIsLoading] = useState(true)
 
   const { user } = useAuth();
   const params = useParams();
 
-  const { setRequest } = useGlobalStates()
-
+  const { setRequest } = useGlobalStates();
 
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    async function fetchDish() {
+      const res = await api.get(`/dishes/${params.id}`);
 
+      setData(res.data);
+
+      setIsLoading(false)
+    }
+    fetchDish();
+  }, []);
   function handleBack() {
     navigate(-1);
   }
 
   function handleEditDish() {
-      navigate(`/editdish/${data.id}`)
+    navigate(`/editdish/${data.id}`);
   }
 
   useEffect(() => {
- // setPrice(data.price * amount);
+    setPrice(data.price * amount);
+  }, [amount]);
   
-   }, [amount]);
-
   function handleAmount(value) {
     if (value === "+") {
       setAmount(amount + 1);
@@ -63,28 +72,19 @@ export function PreviewDish() {
     }
   }
 
-  useEffect(() => {
-    async function fetchDish() {
-      const res = await api.get(`/dishes/${params.id}`);
 
-      setData(res.data);
-    }
-    fetchDish();
-  }, []);
-
-  function handleRequest( ){
-    setRequest(amount)
+  function handleRequest() {
+    setRequest(amount);
   }
 
   return (
     <Container>
       <Menu menuIsOpen={menuIsOpen} onCloseMenu={() => setMenuIsOpen(false)} />
       <Header onOpenMenu={() => setMenuIsOpen(true)} />
-      {data && (
+    {isLoading ? "loading" : data && (
         <Main>
-<MainContent>
-         
-              <Button_back
+          <MainContent>
+            <Button_back
               title="voltar"
               icon={IoIosArrowBack}
               onClick={handleBack}
@@ -105,26 +105,35 @@ export function PreviewDish() {
 
               <div className="bottom-card">
                 <div className="amount">
+                {[USER_ROLE.CUSTOMER].includes(user.role) && (
                   <ButtonText
                     icon={FiMinus}
                     onClick={() => handleAmount("-")}
-                  />
-                  <p>{amount}</p>
+                  />)}
+                   {[USER_ROLE.CUSTOMER].includes(user.role) && (
+                  <p>{amount}</p>)}
+                   {[USER_ROLE.CUSTOMER].includes(user.role) && (
                   <ButtonText icon={GoPlus} onClick={() => handleAmount("+")} />
+                   )}
                 </div>
                 {[USER_ROLE.CUSTOMER].includes(user.role) && (
-                    <ButtonCard title={`Incluir ${price}`}  onClick={handleRequest}/>
+                  <ButtonCard
+                    title={`Incluir - R$ ${price}`}
+                    onClick={handleRequest}
+                  />
                 )}
-                   {[USER_ROLE.ADMIN].includes(user.role) && (
-                    <ButtonCard title="Editar prato" onClick={handleEditDish}/>
+                {[USER_ROLE.ADMIN].includes(user.role) && (
+                  <ButtonCard title="Editar prato" onClick={handleEditDish} />
                 )}
               </div>
             </DishContent>
           </MainContent>
         </Main>
-      )}
+      )} 
+
       <Footer />
       <Menu menuIsOpen={menuIsOpen} onCloseMenu={() => setMenuIsOpen(false)} />
+
     </Container>
   );
 }
