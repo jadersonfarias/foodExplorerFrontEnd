@@ -3,7 +3,7 @@ import { Button } from "../Button";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
-  min-width: 21.5rem;
+  width: 23.5rem;
   min-height: 40rem; 
   position: relative;
 
@@ -23,7 +23,7 @@ export const Container = styled.div`
 
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-    width: 29rem;
+    min-width: 21rem;
     height: 30.0rem;
 
     text-align: center;

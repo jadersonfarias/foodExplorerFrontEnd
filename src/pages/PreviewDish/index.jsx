@@ -58,7 +58,7 @@ export function PreviewDish() {
   }
 
   useEffect(() => {
-    setPrice(data.price * amount);
+   // setPrice(data.price * amount);
   }, [amount]);
   
   function handleAmount(value) {

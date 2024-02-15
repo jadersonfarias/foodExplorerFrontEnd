@@ -2,7 +2,6 @@ import { Container, Form } from "./styles";
 import { IoIosArrowBack } from "react-icons/io";
 import { FaArrowUpFromBracket } from "react-icons/fa6";
 
-
 import { useState } from "react";
 
 import { Input } from "../../components/Input";
@@ -13,7 +12,7 @@ import { Ingredients } from "../../components/Ingredients";
 import { ButtonText } from "../../components/ButtonText";
 import { Button } from "../../components/Button";
 import { Menu } from "../../components/Menu";
-import { Link } from "react-router-dom";
+import Vector from "../../assets/Vector.svg";
 
 import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
@@ -54,15 +53,15 @@ export function CreateDish() {
     //  ingredients,
     // }); ingredients.map((ingredient) => formData.append("ingredients", ingredient));
     if (!image) {
-      return alert("imagem obrigatoria")
+      return alert("imagem obrigatoria");
     }
 
     if (!name) {
-      return alert("nome do prato  obrigatorio ")
+      return alert("nome do prato  obrigatorio ");
     }
 
     if (!category) {
-      return alert("O campo de categoria é obrigatóio")
+      return alert("O campo de categoria é obrigatóio");
     }
 
     if (newIngredient) {
@@ -72,16 +71,16 @@ export function CreateDish() {
     }
 
     if (ingredients.length === 0) {
-      return alert("O campo ingredients é obrigatório")
+      return alert("O campo ingredients é obrigatório");
     }
 
     if (!price) {
-      return alert("campo de preço obrigatório")
+      return alert("campo de preço obrigatório");
     }
 
     if (!description) {
-      return alert("O campo de Descrição é obrigatória ")
-    } 
+      return alert("O campo de Descrição é obrigatória ");
+    }
 
     const formData = new FormData();
     formData.append("image", image);
@@ -90,14 +89,16 @@ export function CreateDish() {
     formData.append("category", category);
     formData.append("price", price);
 
-    
-   // ingredients.map((ingredient) => formData.append("ingredients", JSON.stringify(ingredient)));
+    // ingredients.map((ingredient) => formData.append("ingredients", JSON.stringify(ingredient)));
 
-   if (Array.isArray(ingredients)) {  //retorna true se for um array
-    ingredients.forEach((ingredient) => //percorre todos os itens ecoloca no formdata
-      formData.append("ingredients[]", ingredient)
-    );
-  }
+    if (Array.isArray(ingredients)) {
+      //retorna true se for um array
+      ingredients.forEach(
+        (
+          ingredient //percorre todos os itens ecoloca no formdata
+        ) => formData.append("ingredients[]", ingredient)
+      );
+    }
 
     await api.post("/dishes", formData);
 
@@ -105,8 +106,8 @@ export function CreateDish() {
     navigate("/");
   }
 
-  function handleBack(){
-    navigate("/")
+  function handleBack() {
+    navigate("/");
   }
 
   return (
@@ -116,8 +117,12 @@ export function CreateDish() {
       <main>
         <Form>
           <header>
-            <ButtonText title="Voltar" icon={IoIosArrowBack} onClick={handleBack} />
-            <h1>Adicionar prato</h1>
+            <ButtonText
+              title="Voltar"
+              icon={IoIosArrowBack}
+              onClick={handleBack}
+            />
+            <h1>Adicionar prato </h1>
           </header>
           <section className="col-1">
             <label htmlFor="image">
@@ -142,14 +147,17 @@ export function CreateDish() {
                 onChange={(e) => setName(e.target.value)}
               />
             </label>
-
+            
             <label htmlFor="category">
               Categoria
               <select
+               className="arrowDown"
                 name="category"
                 id="category"
                 onChange={(e) => setCategory(e.target.value)}
+                
               >
+        
                 <option value="">Selecione uma Categoria </option>
                 <option value="Refeições">Refeições</option>
                 <option value="Sobremesas">Sobremesas</option>

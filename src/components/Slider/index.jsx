@@ -31,7 +31,7 @@ export function Slider({ children, ...rest }) {
            },
           1024: {
               slidesPerView: 4,
-              spaceBetween: 80,
+              spaceBetween: 60,
             }
         }}
        >

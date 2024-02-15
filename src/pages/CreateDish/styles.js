@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
+import Vector from "../../assets/Vector.svg";
 
 export const Container = styled.div`
   height: 100vh;
@@ -20,21 +21,21 @@ export const Form = styled.form`
   max-width: 112rem;
   margin: 4rem auto 11.6rem;
 
-  @media(max-width: ${DEVICE_BREAKPOINTS.LG}){
-       max-width: 85rem;
+  @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {
+    max-width: 85rem;
   }
 
-  @media(max-width: ${DEVICE_BREAKPOINTS.MD}){
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
     max-width: 50.6rem;
-    section{
-        display: flex;
-        flex-direction: column;
+    section {
+      display: flex;
+      flex-direction: column;
     }
 
     .buttons {
-       button{
+      button {
         width: 100%;
-       }
+      }
     }
   }
 
@@ -68,12 +69,9 @@ export const Form = styled.form`
     display: flex;
     justify-content: center;
     gap: 3.2rem;
-
-
   }
 
   .col-1 {
- 
     .image {
       display: flex;
       align-items: center;
@@ -109,6 +107,14 @@ export const Form = styled.form`
 
     select {
       background-color: ${({ theme }) => theme.COLORS.DARK["800"]};
+
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+
       color: ${({ theme }) => theme.COLORS.LIGHT["500"]};
       padding: 1.6rem;
       border-radius: 5px;
@@ -120,13 +126,16 @@ export const Form = styled.form`
 
       cursor: pointer;
       transition: filter 0.3s;
-
-
     }
 
-
+    .arrowDown {
+    transform: scale(3.3px);
+      background-image: url(${Vector});
+      background-repeat: no-repeat;
+      background-position: 95%;
+    
+    }
   }
-
 
   .col-2 {
     .ingredients {
@@ -142,10 +151,6 @@ export const Form = styled.form`
       height: auto;
       background-color: ${({ theme }) => theme.COLORS.DARK["800"]};
     }
-
-    
-
-  
   }
 
   > Button {

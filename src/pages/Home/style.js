@@ -59,7 +59,6 @@ export const MainContent = styled.div`
   margin: auto;
   width: 90%;
   position: relative;
-  background: linear-gradient(to right, black, transparent 40%, transparent 40%, black);
 
 
 
