@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Button } from "../../components/Button";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
+import Vector from "../../assets/Vector.svg";
+
 
 export const Container = styled.div`
   height: 100vh;
@@ -113,12 +115,26 @@ export const Form = styled.form`
       border-radius: 5px;
       font-size: 1.6rem;
 
+
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
       border: none;
       outline: 0;
-      box-shadow: none;
+     
 
       cursor: pointer;
       transition: filter 0.2s;
+    }
+
+    .arrowDown {
+      transform: scale(3.3px);
+      background-image: url(${Vector});
+      background-repeat: no-repeat;
+      background-position: 95%;
+    
     }
   }
   .buttons {

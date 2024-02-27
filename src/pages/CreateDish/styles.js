@@ -129,7 +129,7 @@ export const Form = styled.form`
     }
 
     .arrowDown {
-    transform: scale(3.3px);
+      transform: scale(3.3px);
       background-image: url(${Vector});
       background-repeat: no-repeat;
       background-position: 95%;
@@ -145,11 +145,18 @@ export const Form = styled.form`
       border-radius: 0.6rem;
 
       padding: 0.3rem 0.8rem;
-      gap: 1.6rem;
+      gap: 1rem;
 
       width: 100%;
-      height: auto;
+      height: 49%;
       background-color: ${({ theme }) => theme.COLORS.DARK["800"]};
+
+      input {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+        resize: vertical; /* Permite redimensionar verticalmente */
+      }
     }
   }
 

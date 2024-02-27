@@ -45,10 +45,6 @@ export function Header({ onOpenMenu, children, ...rest }) {
     navigate("/CreateDish");
   }
 
-
-
-
-
   return (
     <Container {...rest}>
       <Menu onClick={onOpenMenu}>

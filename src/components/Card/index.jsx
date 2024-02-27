@@ -15,7 +15,7 @@ import { api } from "../../services/api";
 export function Card({ data, ...rest }) {
   const { user } = useAuth();
   const navigate = useNavigate();
-  const { setRequest, request } = useGlobalStates();
+  const { setRequest,setValue } = useGlobalStates();
 
   const [amount, setAmount] = useState(1);
   const [price, setPrice] = useState(Number(data.price));
@@ -37,6 +37,7 @@ export function Card({ data, ...rest }) {
 
   useEffect(() => {
     setPrice(data.price * amount);
+    
   }, [amount]);
 
   function handleAmount(value) {
@@ -49,7 +50,7 @@ export function Card({ data, ...rest }) {
 
   function handleRequest() {
     setRequest(amount);
-    console.log(request);
+    setValue(price)
   }
 
   return (

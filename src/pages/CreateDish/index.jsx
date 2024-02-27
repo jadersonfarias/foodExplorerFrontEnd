@@ -12,7 +12,6 @@ import { Ingredients } from "../../components/Ingredients";
 import { ButtonText } from "../../components/ButtonText";
 import { Button } from "../../components/Button";
 import { Menu } from "../../components/Menu";
-import Vector from "../../assets/Vector.svg";
 
 import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
@@ -147,17 +146,15 @@ export function CreateDish() {
                 onChange={(e) => setName(e.target.value)}
               />
             </label>
-            
+
             <label htmlFor="category">
               Categoria
               <select
-               className="arrowDown"
+                className="arrowDown"
                 name="category"
                 id="category"
                 onChange={(e) => setCategory(e.target.value)}
-                
               >
-        
                 <option value="">Selecione uma Categoria </option>
                 <option value="Refeições">Refeições</option>
                 <option value="Sobremesas">Sobremesas</option>

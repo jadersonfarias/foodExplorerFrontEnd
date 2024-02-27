@@ -189,7 +189,7 @@ export function EditDish() {
 
             <label htmlFor="category">
               Categoria
-              <select name="category" id="category">
+              <select name="category" id="category"  className="arrowDown">
                 <option value={category}>{category}</option>
                 <option value="Refeições">Refeições</option>
                 <option value="Sobremesas">Sobremesas</option>

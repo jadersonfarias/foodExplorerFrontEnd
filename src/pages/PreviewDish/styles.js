@@ -16,14 +16,16 @@ export const Main = styled.main`
 `;
 
 export const MainContent = styled.section`
-  padding-top: 10.5rem;
-  margin: 0 12.1rem;
+  width: 80%;
+  margin: auto;
+  padding-top:5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 7rem;
 
   position: relative;
+
 
   @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {
     padding-top: 7rem;
@@ -41,8 +43,15 @@ export const MainContent = styled.section`
 
 export const MainImage = styled.img`
   display: block;
-  max-height: 36rem;
-  max-width: 36rem;
+  max-height: 25rem;
+  max-width: 25rem;
+  border-radius: 50%;
+
+  transition: transform 1.8s ease-in-out;
+  
+  &:hover {
+   transform: rotate(65deg);
+  }
 
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
@@ -132,7 +141,7 @@ export const ButtonCard = styled(Button)`
 export const Button_back = styled(ButtonText)`
   position: absolute;
   left: -3.5rem;
-  top: 2rem;
+  top: 1.5rem;
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
     top: 1rem;

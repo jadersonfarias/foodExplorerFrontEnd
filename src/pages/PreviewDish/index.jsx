@@ -29,23 +29,21 @@ export function PreviewDish() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [data, setData] = useState(null);
   const [amount, setAmount] = useState(1);
-  const [price, setPrice] = useState(0);
-  const [isLoading, setIsLoading] = useState(true)
-
+  const[price, setPrice ]=useState()
+ 
   const { user } = useAuth();
   const params = useParams();
 
-  const { setRequest } = useGlobalStates();
+  const { request, setRequest, value } = useGlobalStates();
 
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     async function fetchDish() {
       const res = await api.get(`/dishes/${params.id}`);
 
       setData(res.data);
 
-      setIsLoading(false)
     }
     fetchDish();
   }, []);
@@ -53,17 +51,30 @@ export function PreviewDish() {
     navigate(-1);
   }
 
+  useEffect(() => {
+    setAmount(request);
+
+  }, []); 
+
+  
+  useEffect(() => { 
+      setPrice( value * amount);  
+  }, [amount]); 
+
   function handleEditDish() {
     navigate(`/editdish/${data.id}`);
   }
 
-  useEffect(() => {
-   // setPrice(data.price * amount);
-  }, [amount]);
-  
+   useEffect(() => {
+      //setPrice(data.price * amount);
+   
+ }, []);
+
   function handleAmount(value) {
     if (value === "+") {
       setAmount(amount + 1);
+  
+      
     } else if (value === "-") {
       if (amount === 0) {
         return;
@@ -72,68 +83,78 @@ export function PreviewDish() {
     }
   }
 
-
   function handleRequest() {
     setRequest(amount);
   }
+
+
 
   return (
     <Container>
       <Menu menuIsOpen={menuIsOpen} onCloseMenu={() => setMenuIsOpen(false)} />
       <Header onOpenMenu={() => setMenuIsOpen(true)} />
-    {isLoading ? "loading" : data && (
-        <Main>
-          <MainContent>
-            <Button_back
-              title="voltar"
-              icon={IoIosArrowBack}
-              onClick={handleBack}
-            />
-            <MainImage
-              src={`${api.defaults.baseURL}/files/${data.image}`}
-              alt="prato"
-            />
-            <DishContent>
-              <h1>{data.name}</h1>
-              <p>{data.description}</p>
+      {data && (
+            <Main>
+              <MainContent>
+                <Button_back
+                  title="voltar"
+                  icon={IoIosArrowBack}
+                  onClick={handleBack}
+                />
+                <MainImage
+                 
+                  src={`${api.defaults.baseURL}/files/${data.image}`}
+                  alt="prato"
+        
+                />
+                <DishContent>
+                  <h1>{data.name}</h1>
+                  <p>{data.description}</p>
 
-              <div className="ingredient-tag">
-                {data.ingredients.map((ingredient, i) => (
-                  <Ingredient key={i} title={ingredient.title}></Ingredient>
-                ))}
-              </div>
+                  <div className="ingredient-tag">
+                    {data.ingredients.map((ingredient, i) => (
+                      <Ingredient key={i} title={ingredient.title}></Ingredient>
+                    ))}
+                  </div>
 
-              <div className="bottom-card">
-                <div className="amount">
-                {[USER_ROLE.CUSTOMER].includes(user.role) && (
-                  <ButtonText
-                    icon={FiMinus}
-                    onClick={() => handleAmount("-")}
-                  />)}
-                   {[USER_ROLE.CUSTOMER].includes(user.role) && (
-                  <p>{amount}</p>)}
-                   {[USER_ROLE.CUSTOMER].includes(user.role) && (
-                  <ButtonText icon={GoPlus} onClick={() => handleAmount("+")} />
-                   )}
-                </div>
-                {[USER_ROLE.CUSTOMER].includes(user.role) && (
-                  <ButtonCard
-                    title={`Incluir - R$ ${price}`}
-                    onClick={handleRequest}
-                  />
-                )}
-                {[USER_ROLE.ADMIN].includes(user.role) && (
-                  <ButtonCard title="Editar prato" onClick={handleEditDish} />
-                )}
-              </div>
-            </DishContent>
-          </MainContent>
-        </Main>
-      )} 
-
+                  <div className="bottom-card">
+                    <div className="amount">
+                      {[USER_ROLE.CUSTOMER].includes(user.role) && (
+                        <ButtonText
+                          icon={FiMinus}
+                          onClick={() => handleAmount("-")}
+                        />
+                      )}
+                      {[USER_ROLE.CUSTOMER].includes(user.role) && (
+                        <p>{amount}</p>
+                      )}
+                      {[USER_ROLE.CUSTOMER].includes(user.role) && (
+                        <ButtonText
+                          icon={GoPlus}
+                          onClick={() => handleAmount("+")}
+                        />
+                      )}
+                    </div>
+                    {[USER_ROLE.CUSTOMER].includes(user.role) && (
+                      <ButtonCard
+                        title={`Incluir - R$ ${amount !== 1 ? price : data.price} `}
+                        onClick={handleRequest}
+                      />
+                    )}
+                    {[USER_ROLE.ADMIN].includes(user.role) && (
+                      <ButtonCard
+                        title="Editar prato"
+                        onClick={handleEditDish}
+                      />
+                    )}
+                  </div>
+                </DishContent>
+              </MainContent>
+            </Main>
+  
+  )}
       <Footer />
       <Menu menuIsOpen={menuIsOpen} onCloseMenu={() => setMenuIsOpen(false)} />
-
     </Container>
   );
 }

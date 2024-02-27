@@ -16,7 +16,7 @@ export const Main = styled.main`
 
 export const BannerContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  gap:78rem;
 
   margin: auto;
 
@@ -31,27 +31,34 @@ export const BannerContainer = styled.div`
 
   position: relative;
 
-  
+  @media (max-width: ${DEVICE_BREAKPOINTS.XL}){
+    gap: 60rem;
+   
+  }
+
   @media (max-width: ${DEVICE_BREAKPOINTS.LG}){
     height: 20rem;
-
+    gap: 40rem;
    
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
     height: 16rem;
+    gap:40rem
 
    
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.SM}){
-      margin-top: 6.8rem;
+      margin-top: 6.9rem;
       height: 13rem;
+      gap: 19rem;
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}){
     margin-top: 5.2rem;
     height: 11rem;
+    gap:15rem;
   }
 `;
 
@@ -110,7 +117,7 @@ export const BannerContent = styled.div`
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  width: 40%;
+  //width: 40%;
 
   h1 {
     font-family: Poppins;
@@ -125,14 +132,10 @@ export const BannerContent = styled.div`
   }
 
   
-  @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {
-    position: absolute;
-     left: 50rem;
-  }
+
   
    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-      position: absolute;
-      left: 42rem;
+
 
     h1 {
       font-size: 1.8rem;
@@ -145,11 +148,10 @@ export const BannerContent = styled.div`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.SM}){
-      position: absolute;
-      left: 20rem;
 
       h1 {
       font-size: 1.2rem;
+      line-height: 3rem;
     }
 
     p {
@@ -159,8 +161,8 @@ export const BannerContent = styled.div`
     }
 
     @media (max-width: ${DEVICE_BREAKPOINTS.XS}){
-      position: absolute;
-      left: 16.5rem;
+      /* position: absolute;
+      left: 16.5rem; */
       h1 {
       font-size: 1rem;
     }
