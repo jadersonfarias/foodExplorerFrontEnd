@@ -1,5 +1,5 @@
 import { Container } from "./styles";
-import LogoExplorer from "../../assets/logoExplorer.svg";
+
 
 export function Logo(props) {
   return (
