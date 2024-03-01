@@ -1,6 +1,6 @@
 import { Container, LogoContainer} from "./styles";
 import { Logo } from "../Logo";
-import LogoExplorer from "../../assets/logoExplorer.svg";
+
 
 export function Footer() {
   return (
