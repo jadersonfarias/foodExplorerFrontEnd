@@ -8,7 +8,7 @@ import {
   Receipt_mobile,
   LogoImg,
 } from "./styles";
-import LogoExplorer from "../../assets/logoExplorer.svg";
+import LogoExplorer from "../../assets/LogoExplorer.svg";
 import SignOut from "../../assets/SignOut.svg";
 import { PiReceiptBold } from "react-icons/pi";
 import { FaSearch } from "react-icons/fa";
