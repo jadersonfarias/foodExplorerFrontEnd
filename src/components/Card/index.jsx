@@ -29,6 +29,7 @@ export function Card({ data, ...rest }) {
 
   function handleNavigate() {
     navigate(`/PreviewDish/${data.id}`);
+
   }
 
   function handleNavigateEditDish() {
@@ -36,8 +37,7 @@ export function Card({ data, ...rest }) {
   }
 
   useEffect(() => {
-    setPrice(data.price * amount);
-    
+    setPrice(data.price * amount);  
   }, [amount]);
 
   function handleAmount(value) {
@@ -50,7 +50,6 @@ export function Card({ data, ...rest }) {
 
   function handleRequest() {
     setRequest(amount);
-    setValue(price)
   }
 
   return (

@@ -47,6 +47,10 @@ export const MainImage = styled.img`
   max-width: 25rem;
   border-radius: 50%;
 
+  overflow-clip-margin: content-box;
+  overflow: clip;
+
+
   transition: transform 1.8s ease-in-out;
   
   &:hover {

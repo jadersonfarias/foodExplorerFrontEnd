@@ -28,13 +28,13 @@ import { Menu } from "../../components/Menu";
 export function PreviewDish() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [data, setData] = useState(null);
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(0);
   const[price, setPrice ]=useState()
  
   const { user } = useAuth();
   const params = useParams();
 
-  const { request, setRequest, value } = useGlobalStates();
+  const { request, setRequest, value, setValue} = useGlobalStates();
 
   const navigate = useNavigate();
 
@@ -43,6 +43,8 @@ export function PreviewDish() {
       const res = await api.get(`/dishes/${params.id}`);
 
       setData(res.data);
+
+      console.log(value);
 
     }
     fetchDish();
@@ -56,24 +58,27 @@ export function PreviewDish() {
 
   }, []); 
 
+
   
   useEffect(() => { 
-      setPrice( value * amount);  
+     if(amount === 1){
+        setValue(data.price)
+     } else {
+       setPrice( value * amount);  
+ 
+     }
   }, [amount]); 
 
   function handleEditDish() {
     navigate(`/editdish/${data.id}`);
   }
 
-   useEffect(() => {
-      //setPrice(data.price * amount);
-   
- }, []);
+
 
   function handleAmount(value) {
     if (value === "+") {
       setAmount(amount + 1);
-  
+    
       
     } else if (value === "-") {
       if (amount === 0) {
@@ -132,13 +137,15 @@ export function PreviewDish() {
                         <ButtonText
                           icon={GoPlus}
                           onClick={() => handleAmount("+")}
+                          
                         />
                       )}
                     </div>
                     {[USER_ROLE.CUSTOMER].includes(user.role) && (
                       <ButtonCard
-                        title={`Incluir - R$ ${amount !== 1 ? price : data.price} `}
+                        title={`Incluir - R$ ${amount !== 1 ? price : data.price } `}
                         onClick={handleRequest}
+                     
                       />
                     )}
                     {[USER_ROLE.ADMIN].includes(user.role) && (
