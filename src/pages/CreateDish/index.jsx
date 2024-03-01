@@ -5,7 +5,7 @@ import { FaArrowUpFromBracket } from "react-icons/fa6";
 import { useState } from "react";
 
 import { Input } from "../../components/Input";
-import { Textarea } from "../../components/TextArea";
+import { Textarea } from "../../components/Textarea";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Ingredients } from "../../components/Ingredients";
