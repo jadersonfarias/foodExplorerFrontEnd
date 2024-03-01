@@ -12,7 +12,7 @@ import { Menu } from "../../components/Menu";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Input } from "../../components/Input";
-import { Textarea } from "../../components/TextArea";
+import { Textarea } from "../../components/Textarea";
 import { Ingredients } from "../../components/Ingredients";
 import { ButtonText } from "../../components/ButtonText";
 
