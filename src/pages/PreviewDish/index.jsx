@@ -28,7 +28,7 @@ import { Menu } from "../../components/Menu";
 export function PreviewDish() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [data, setData] = useState(null);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState();
   const[price, setPrice ]=useState()
  
   const { user } = useAuth();
@@ -44,7 +44,7 @@ export function PreviewDish() {
 
       setData(res.data);
 
-      console.log(value);
+
 
     }
     fetchDish();
@@ -61,13 +61,12 @@ export function PreviewDish() {
 
   
   useEffect(() => { 
-     if(amount === 1){
+     if(amount === 1 && data){
         setValue(data.price)
      } else {
        setPrice( value * amount);  
- 
      }
-  }, [amount]); 
+  }, [amount,data, value]); 
 
   function handleEditDish() {
     navigate(`/editdish/${data.id}`);
