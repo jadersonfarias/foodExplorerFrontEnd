@@ -18,11 +18,12 @@ export const Container = styled.div`
             flex-direction: column;
             gap: 4rem;  
     }
-/* 
+ 
     @media (max-width:${DEVICE_BREAKPOINTS.SM}) {
+        margin: 3rem auto 0;
 
+    } 
 
-    } */
 
 `
 
