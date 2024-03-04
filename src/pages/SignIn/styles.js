@@ -55,10 +55,7 @@ export const Form = styled.form`
            background-color:transparent;
            align-items: center;
            padding: 2rem;
-           width: 47.6rem;
-            
-        
-
+       ;          
     }
 
    
