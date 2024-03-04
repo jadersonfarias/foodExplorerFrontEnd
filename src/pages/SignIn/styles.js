@@ -20,7 +20,7 @@ export const Container = styled.div`
     }
  
     @media (max-width:${DEVICE_BREAKPOINTS.SM}) {
-        margin: 3rem auto 0;
+        margin: 0 auto 0;
 
     } 
 
