@@ -53,10 +53,10 @@ export const Form = styled.form`
 
 
     @media (max-width:${DEVICE_BREAKPOINTS.SM}) {
-            height: 100vh;
+           height: 100vh;
            background-color:transparent;
            align-items: center;
-           padding: 2rem;
+           padding: 0;
        ;          
     }
 
