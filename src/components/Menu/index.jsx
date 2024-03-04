@@ -17,7 +17,7 @@ import { Input } from "../Input";
 import { Button } from "../Button";
 
 export function Menu({ menuIsOpen, onCloseMenu }) {
-  const { user } = useAuth();
+  const { user, signOut} = useAuth();
 
   const navigate = useNavigate();
 
@@ -49,7 +49,7 @@ export function Menu({ menuIsOpen, onCloseMenu }) {
                 Novo prato
               </a>
             )}
-            <a href="" onClick={handleBack}>
+            <a href="" onClick={signOut}>
               Sair
             </a>
           </Nav>
