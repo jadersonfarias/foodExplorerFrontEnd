@@ -43,7 +43,7 @@ export const MainContent = styled.section`
 
 export const MainImage = styled.img`
   display: block;
-  max-height: 25rem;
+  //max-height: 35rem;
   max-width: 25rem;
   border-radius: 50%;
 
@@ -64,6 +64,7 @@ export const MainImage = styled.img`
   }
 `;
 export const DishContent = styled.div`
+
   h1 {
     font-family: Poppins;
     font-size: 3rem;
@@ -114,14 +115,19 @@ export const DishContent = styled.div`
       margin: 3rem 0;
       justify-content: center;
     }
+    .ingredient{
+      
+    }
 
     .ingredient-tag {
         justify-content: center;
+        padding: 0 2rem ;
       }
 }
   
 
   @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
+    width: 90%;
     h1 {
       font-size: 2.5rem;
     }
@@ -151,8 +157,12 @@ export const Button_back = styled(ButtonText)`
     top: 1rem;
     left: -5rem;
   }
+  @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
+    top: 2rem;
+    left: -3rem;
+  }
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    top: 1rem;
-    left: -12rem;
+    top: 2rem;
+    left: -3rem;
   }
 `;

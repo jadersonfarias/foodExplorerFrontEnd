@@ -4,6 +4,7 @@ import{ DEVICE_BREAKPOINTS } from"../../styles/deviceBreakpoints"
 
 export const Container = styled.div`
     height: 100vh;
+    width: 100vw;
 
 
     display: flex;
@@ -37,10 +38,8 @@ export const LogoAuth = styled.div`
 
 `
 
-export const Form = styled.form`
-    width: 44.0rem;
-    height: 49.0rem;
-    padding: 6.4rem;
+export const Form = styled.form`  
+    padding: 6.4rem; 
 
     background-color: ${({theme}) => theme.COLORS.DARK['700']};
 
@@ -55,11 +54,14 @@ export const Form = styled.form`
     @media (max-width:${DEVICE_BREAKPOINTS.SM}) {
            background-color:transparent;
            align-items: center;
-           margin-left:2.5rem;
-
+           padding: 2rem;
            width: 47.6rem;
+            
+        
 
     }
+
+   
       
   .labels {
     display: flex;
