@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 
     @media (max-width:${DEVICE_BREAKPOINTS.LG}) {
-            margin: 9rem auto;
+           margin: 9rem auto 0;
             flex-direction: column;
             gap: 4rem;  
     }
@@ -32,14 +32,14 @@ export const LogoAuth = styled.div`
      gap: 2rem;
 
     font-family: Roboto;
-    font-size: 3.0rem;
+    font-size: 3.5rem;
 
 
 
 `
 
 export const Form = styled.form`  
-   // padding: 6.4rem; 
+    padding:6.4rem;
  
 
     background-color: ${({theme}) => theme.COLORS.DARK['700']};
