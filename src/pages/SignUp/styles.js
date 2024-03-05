@@ -16,6 +16,12 @@ export const Container = styled.div`
             flex-direction: column;
             gap: 4rem;  
     }
+    
+    @media (max-width:${DEVICE_BREAKPOINTS.SM}) {
+        margin: 0 auto 0;
+
+    } 
+
 
 `
 export const LogoAuth = styled.div`
@@ -30,9 +36,8 @@ export const LogoAuth = styled.div`
 
 `
 
-export const Form = styled.form`
-    width: 44.0rem;
-    height: 49.0rem;
+export const Form = styled.form` 
+
     padding: 6.4rem;
 
     background-color: ${({theme}) => theme.COLORS.DARK['700']};
@@ -48,9 +53,8 @@ export const Form = styled.form`
     @media (max-width:${DEVICE_BREAKPOINTS.SM}) {
            background-color:transparent;
            align-items: center;
-           margin-left:2.5rem;
-
-           width: 47.6rem;
+           padding: 3.0rem 0;
+         
 
     }
 
@@ -58,7 +62,7 @@ export const Form = styled.form`
       
   .labels {
     display: flex;
-    margin-bottom: .5rem;
+    margin-bottom: 1.5rem;
     font-size: 1.6rem;
   }
 
