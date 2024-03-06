@@ -54,7 +54,7 @@ export function EditDish() {
     }
 
     if (!price) {
-      return alert("Obrigatório ter um preço pois se não fica de graça!")
+      return alert("Obrigatório ter um preço !")
     }
 
     if (!description) {
@@ -225,6 +225,7 @@ export function EditDish() {
               <Input
                 placeholder="R$ 00,00"
                 onChange={(e) => setPrice(e.target.value)}
+                value={price}
               />
             </label>
           </section>

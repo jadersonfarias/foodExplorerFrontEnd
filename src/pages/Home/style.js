@@ -69,6 +69,7 @@ export const MainContent = styled.div`
 
 
 
+
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
    
   }

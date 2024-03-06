@@ -151,12 +151,7 @@ export const Form = styled.form`
       height: 49%;
       background-color: ${({ theme }) => theme.COLORS.DARK["800"]};
 
-      input {
-        width: 100%;
-        padding: 0.5rem;
-        border-radius: 0.3rem;
-        resize: vertical; /* Permite redimensionar verticalmente */
-      }
+   
     }
   }
 

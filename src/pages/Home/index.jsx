@@ -29,7 +29,7 @@ export function Home() {
   useEffect(() => {
     async function fetchDishes() {
       const res = await api.get(`/dishes`);
-      console.log(res.data);
+     // console.log(res.data);
       setDishes(res.data);
     }
 

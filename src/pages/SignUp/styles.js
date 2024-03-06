@@ -30,7 +30,7 @@ export const LogoAuth = styled.div`
      gap: 2rem;
 
     font-family: Roboto;
-    font-size: 3.0rem;
+    font-size: 3.5rem;
 
 
 

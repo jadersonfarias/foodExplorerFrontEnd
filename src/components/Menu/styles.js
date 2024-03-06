@@ -10,7 +10,7 @@ export const Container = styled.aside`
     height: 100vh;
     width: 100%;
   
-    transform: translate(-250%);
+    transform: translate(-280%);
     transition: transform 0.3s ease-in-out;;
 
   
@@ -84,7 +84,7 @@ export const Main = styled.main`
 
 export const MainContent = styled.div`
   padding-top: 3.6rem;
-  width: 67.0rem;
+  width: 80%;
   margin: auto;
 
 `
@@ -92,7 +92,7 @@ export const MainContent = styled.div`
 export const Nav = styled.nav`
     display: flex; 
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 2.8rem;
 
    :nth-child(1) {
     margin-top: 3.6rem;

@@ -14,7 +14,9 @@ import { PiReceiptBold } from "react-icons/pi";
 import { FaSearch } from "react-icons/fa";
 
 import { useAuth } from "../../hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
+
+import { useEffect } from "react";
 
 import { List, Receipt } from "@phosphor-icons/react";
 
@@ -37,6 +39,17 @@ export function Header({ onOpenMenu, children, ...rest }) {
       setDishes(res.data);
     }
   }
+
+    useEffect(() => {
+    async function fetchDishes() {
+      const res = await api.get(`/dishes?search=${search}`)
+      // console.log(res.data)
+      setDishes(res.data)
+    }
+
+    fetchDishes()
+  }, [search])
+
   function handleChange(e) {
     setSearch(e.target.value);
   }
@@ -69,7 +82,7 @@ export function Header({ onOpenMenu, children, ...rest }) {
 
       <Request>
         {[USER_ROLE.CUSTOMER].includes(user.role) &&
-          <Button icon={PiReceiptBold} title={`pedido (${request})`}/>
+          <Button icon={PiReceiptBold} title={`pedido (${request === 1 ? 0 : request })`}/>
         }
 
       {[USER_ROLE.ADMIN].includes(user.role) &&

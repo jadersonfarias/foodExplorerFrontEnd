@@ -12,7 +12,7 @@ export const Container = styled.div`
   }
 
   .swiper-slide {
-    z-index: 0;
+    z-index: 2;
     display: flex;
     justify-content: center;
   }

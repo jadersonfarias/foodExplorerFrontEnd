@@ -11,6 +11,9 @@ import { X, MagnifyingGlass } from "@phosphor-icons/react";
 import { USER_ROLE } from "../../services/utils/roles";
 import { useAuth } from "../../hooks/auth";
 import { useNavigate } from "react-router-dom";
+import { api } from "../../services/api";
+
+import { useGlobalStates } from "../../hooks/globalStates";
 
 import { Footer } from "../Footer";
 import { Input } from "../Input";
@@ -19,11 +22,24 @@ import { Button } from "../Button";
 export function Menu({ menuIsOpen, onCloseMenu }) {
   const { user, signOut} = useAuth();
 
+  const { search, setSearch, setDishes} = useGlobalStates();
+
   const navigate = useNavigate();
 
-  function handleBack() {
-    navigate("/");
+  async function handleSearch(e) {
+    if (e.key === "Enter") {
+      const res = await api.get(`/dishes?search=${search}`);
+      console.log(res.data);
+      setDishes(res.data);
+      onCloseMenu()
+      navigate("/")
+    }
   }
+
+  function handleChange(e) {
+    setSearch(e.target.value);
+  }
+
 
   function handleNewDish() {
     navigate("/createDish");
@@ -33,7 +49,7 @@ export function Menu({ menuIsOpen, onCloseMenu }) {
     <Container data-menu-is-open={menuIsOpen}>
       <MenuHeader>
         <ButtonMenu onClick={onCloseMenu}>
-          <X />
+          <X/>
           <h1>Menu</h1>
         </ButtonMenu>
       </MenuHeader>
@@ -42,6 +58,9 @@ export function Menu({ menuIsOpen, onCloseMenu }) {
           <Input
             icon={MagnifyingGlass}
             placeholder="Busque por pratos ou ingredientes"
+            onKeyPress={handleSearch}
+            onChange={handleChange}
+            value={search}
           />
           <Nav>
             {[USER_ROLE.ADMIN].includes(user.role) && (

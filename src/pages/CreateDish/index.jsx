@@ -25,7 +25,7 @@ export function CreateDish() {
 
   const [ingredients, setIngredients] = useState([]); //guarda todos
   const [newIngredient, setNewIngredient] = useState(""); //guarda um só para passar para array
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState("");
 
   const [description, setDescription] = useState("");
 
@@ -94,7 +94,7 @@ export function CreateDish() {
       //retorna true se for um array
       ingredients.forEach(
         (
-          ingredient //percorre todos os itens ecoloca no formdata
+          ingredient //percorre todos os itens e coloca no formdata
         ) => formData.append("ingredients[]", ingredient)
       );
     }
