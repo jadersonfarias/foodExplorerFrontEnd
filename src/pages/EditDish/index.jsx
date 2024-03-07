@@ -28,7 +28,6 @@ export function EditDish() {
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
 
-  
 
   const { user } = useAuth();
 
@@ -40,7 +39,12 @@ export function EditDish() {
     navigate("/");
   }
 
+  useEffect(() => {
+    console.log(category)
+  }, [category]);
+
   async function handleUpdateDishes() {
+    
     if (!image) {
       return alert("Obrigatório ter uma image para o prato!")
     }
@@ -64,7 +68,7 @@ export function EditDish() {
      console.log({
     //    name,
     //    image,
-    //    category,
+      //  category,
     //   description,
     //    price,
      //  ingredients
@@ -86,7 +90,6 @@ export function EditDish() {
 
     ingredients.map((ingredient) => formData.append("ingredients", ingredient));
 
-    //console.log(formData)
     await api.put(`/dishes/${params.id}`, formData);
   
     alert("Prato atualizado com sucesso! 👌")
@@ -125,7 +128,7 @@ export function EditDish() {
       const res = await api.get(`/dishes/${params.id}`); //pega os dados por id do user
 
       const { name, image, description, category, price, ingredients } = res.data;
-      console.log(res.data);
+      
 
       const ingredientList = ingredients.map((ingredient) => ingredient.title);
       
@@ -189,7 +192,7 @@ export function EditDish() {
 
             <label htmlFor="category">
               Categoria
-              <select name="category" id="category"  className="arrowDown">
+              <select name="category" id="category"  className="arrowDown" onChange={(e) => setCategory(e.target.value)}>
                 <option value={category}>{category}</option>
                 <option value="Refeições">Refeições</option>
                 <option value="Sobremesas">Sobremesas</option>

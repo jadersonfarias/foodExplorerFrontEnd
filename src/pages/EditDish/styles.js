@@ -21,19 +21,20 @@ export const Form = styled.form`
   max-width: 112rem;
   margin: 4rem auto 11.6rem;
   @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {
-    width: 85rem;
+    max-width: 85rem;
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-    width: 55.6rem;
+    padding: 0 1rem 0 1rem;
+    //max-width: 55.6rem;
+    width: 95%;
     section {
       display: flex;
       flex-direction: column;
+
     }
 
-    @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
-      max-width: 45rem;
-    }
+  
 
     .buttons {
       button {
