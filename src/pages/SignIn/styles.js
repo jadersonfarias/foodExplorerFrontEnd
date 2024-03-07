@@ -41,7 +41,7 @@ export const LogoAuth = styled.div`
 
 export const Form = styled.form`  
     padding:6.4rem;
- 
+    
 
     background-color: ${({theme}) => theme.COLORS.DARK['700']};
 
