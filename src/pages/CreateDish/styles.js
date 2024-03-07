@@ -18,15 +18,11 @@ export const Container = styled.div`
 `;
 
 export const Form = styled.form`
-  max-width: 112rem;
+  max-width: 90%;
   margin: 4rem auto 11.6rem;
 
-  @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {
-    max-width: 85rem;
-  }
-
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-    max-width: 50.6rem;
+ 
     section {
       display: flex;
       flex-direction: column;
@@ -138,9 +134,11 @@ export const Form = styled.form`
   }
 
   .col-2 {
+   
     .ingredients {
       padding: 0.4rem;
       display: flex;
+      overflow-x:auto ;
 
       border-radius: 0.6rem;
 
@@ -150,7 +148,13 @@ export const Form = styled.form`
       width: 100%;
       height: 49%;
       background-color: ${({ theme }) => theme.COLORS.DARK["800"]};
-
+       
+      input {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+        resize: vertical; /* Permite redimensionar verticalmente */
+      }
    
     }
   }
