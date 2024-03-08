@@ -7,13 +7,20 @@ export const Container = styled.div`
   min-height: 40rem; 
   position: relative;
 
+  box-shadow: 14px 4px 8px rgba(0, 0, 0, 0.1);
+
+   &:hover {
+    background-color: ${({ theme }) => theme.COLORS.DARK['600']};
+    transform: scale(0.9);
+  }
+
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  background-color: ${({ theme }) => theme.COLORS.DARK['600']};
+  background-color: ${({ theme }) => theme.COLORS.DARK['200']};
   border: 1px solid ${({ theme }) => theme.COLORS.DARK['300']};
  
 

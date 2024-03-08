@@ -11,6 +11,7 @@ export const Container = styled.div`
 
 export const Main = styled.main`
   flex: 1;
+  background: ${({ theme }) => theme.COLORS.GRADIENT['100']};
   
 `;
 
@@ -67,6 +68,7 @@ export const MainContent = styled.div`
   width: 90%;
   position: relative;
 
+ 
 
 
 
