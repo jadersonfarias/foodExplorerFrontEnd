@@ -41,8 +41,8 @@ export function Menu({ menuIsOpen, onCloseMenu }) {
   }
 
 
-  function handleNewDish() {
-    navigate("/CreateDish");
+  function handleNewDish(){
+    navigate("/");
   }
 
   return (
