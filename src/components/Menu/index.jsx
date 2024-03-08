@@ -17,7 +17,7 @@ import { useGlobalStates } from "../../hooks/globalStates";
 
 import { Footer } from "../Footer";
 import { Input } from "../Input";
-import { Button } from "../Button";
+
 
 export function Menu({ menuIsOpen, onCloseMenu }) {
   const { user, signOut} = useAuth();
@@ -42,7 +42,7 @@ export function Menu({ menuIsOpen, onCloseMenu }) {
 
 
   function handleNewDish() {
-    navigate("/createDish");
+    navigate("/CreateDish");
   }
 
   return (

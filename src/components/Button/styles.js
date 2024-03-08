@@ -30,7 +30,8 @@ export const Container = styled.button`
   }
 
   &:disabled {
-    opacity: .5;
+    opacity: 0.5;
+    
   }
 
   > svg {

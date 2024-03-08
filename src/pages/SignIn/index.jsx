@@ -42,7 +42,7 @@ export function SignIn() {
           </label>
           <Input placeholder="Senha" type="password" icon={FiLock} onChange={e => setPassword(e.target.value)}/>
         
-          <Button title="Faça Login" onClick={handleSignIn}/>
+          <Button title="Faça Login" onClick={handleSignIn} />
         </div>
 
         <Link to="/register">criar uma conta</Link>
