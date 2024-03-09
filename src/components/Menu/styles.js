@@ -104,3 +104,14 @@ export const Nav = styled.nav`
     border-bottom: 0.1rem solid ${({ theme }) => theme.COLORS.DARK["1000"]};
   } 
 `;
+
+export const ButtonText = styled.button`
+all: unset;
+
+color: white;
+text-align: left;
+border-bottom: 0.1rem solid ${({ theme }) => theme.COLORS.DARK["1000"]};
+
+font-size: 2.4rem;
+
+`

@@ -5,6 +5,7 @@ import {
   Nav,
   ButtonMenu,
   Main,
+  ButtonText
 } from "./styles";
 
 import { X, MagnifyingGlass } from "@phosphor-icons/react";
@@ -68,7 +69,9 @@ export function Menu({ menuIsOpen, onCloseMenu }) {
               // <a href="" onClick={handleNewDish}>
               //   Novo prato
               // </a>
-              <button onClick={handleNewDish} ></button>
+              <ButtonText onClick={handleNewDish} >
+                Novo prato
+              </ButtonText>
             )}
             <a href="" onClick={signOut}>
               Sair
