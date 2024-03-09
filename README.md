@@ -63,6 +63,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - Styled Components
 - Swiper
 - ViteJS
+- react-icons
 
 <h2 id="usage">💡 Utilização</h2>
 
