@@ -68,7 +68,7 @@ export function Menu({ menuIsOpen, onCloseMenu }) {
                 Novo prato
               </a>
             )}
-            <a href="" onClick={signOut}>
+            <a href="" onClick={handleNewDish}>
               Sair
             </a>
           </Nav>
