@@ -41,11 +41,7 @@ export const Container = styled.div`
        
     } 
   
-
-     .hidden {
-      display: none;
-    }  
-
+    
 
 
     .like {
@@ -62,7 +58,11 @@ export const Container = styled.div`
     }
   }
 
-
+  @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
+    .hidden {
+      display: none;
+    }  
+  }
 
 > h3 {
     padding: 2rem 0;

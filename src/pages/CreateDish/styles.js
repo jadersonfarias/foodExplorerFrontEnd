@@ -11,6 +11,8 @@ export const Container = styled.div`
     "content"
     "footer";
 
+    
+
   main {
     grid-area: content;
     flex-direction: column;
@@ -80,6 +82,7 @@ export const Form = styled.form`
       input {
         color: ${({ theme }) => theme.COLORS.LIGHT["100"]};
         height: 4.8rem;
+     
       }
 
       svg {
@@ -110,6 +113,7 @@ export const Form = styled.form`
       -moz-appearance: none;
       -webkit-appearance: none;
       appearance: none;
+      
 
       color: ${({ theme }) => theme.COLORS.LIGHT["500"]};
       padding: 1.6rem;
@@ -142,11 +146,11 @@ export const Form = styled.form`
 
       border-radius: 0.6rem;
 
-      padding: 0.3rem 0.8rem;
+      padding: 0.3rem 0.9rem;
       gap: 1rem;
 
       width: 100%;
-      height: 49%;
+      height: 51%;
       background-color: ${({ theme }) => theme.COLORS.DARK["800"]};
        
       input {

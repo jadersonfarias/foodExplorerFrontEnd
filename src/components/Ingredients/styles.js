@@ -21,8 +21,8 @@ export const Container = styled.div`
   > input {
     display: flex;
     align-items: center;
-    max-width: 7.0rem;
-    height: 2.8rem;
+    max-width: 8.0rem;
+    max-height: 2.8rem;
   
 
     color: ${({ theme }) => theme.COLORS.LIGHT["100"]};
@@ -44,6 +44,7 @@ export const Container = styled.div`
 
     > svg {
       width: 100%;
+      background:transparent;
       margin-top:0.3rem;
       color: ${({ theme, isNew }) =>
         !isNew
