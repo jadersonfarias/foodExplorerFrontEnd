@@ -51,6 +51,7 @@ export function PreviewDish() {
   }, []);
   function handleBack() {
     navigate(-1);
+    
   }
 
   useEffect(() => {

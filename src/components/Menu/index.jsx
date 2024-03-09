@@ -8,7 +8,7 @@ import {
   ButtonText
 } from "./styles";
 
-import { X, MagnifyingGlass } from "@phosphor-icons/react";
+import { X, MagnifyingGlass,KeyReturn} from "@phosphor-icons/react";
 import { USER_ROLE } from "../../services/utils/roles";
 import { useAuth } from "../../hooks/auth";
 import { useNavigate } from "react-router-dom";
@@ -19,6 +19,7 @@ import { useGlobalStates } from "../../hooks/globalStates";
 
 import { Footer } from "../Footer";
 import { Input } from "../Input";
+import { keyframes } from "styled-components";
 
 
 export function Menu({ menuIsOpen, onCloseMenu }) {
@@ -58,7 +59,7 @@ export function Menu({ menuIsOpen, onCloseMenu }) {
       <Main>
         <MainContent>
           <Input
-            icon={MagnifyingGlass}
+            icon={KeyReturn }
             placeholder="Busque por pratos ou ingredientes"
             onKeyPress={handleSearch}
             onChange={handleChange}
