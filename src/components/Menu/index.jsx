@@ -12,6 +12,7 @@ import { USER_ROLE } from "../../services/utils/roles";
 import { useAuth } from "../../hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
+import { Button } from "../Button";
 
 import { useGlobalStates } from "../../hooks/globalStates";
 
@@ -41,8 +42,8 @@ export function Menu({ menuIsOpen, onCloseMenu }) {
   }
 
 
-  function handleNewDish(){
-    navigate("/CreateDish");
+  function handleNewDish() {
+   navigate("/CreateDish");
   }
 
   return (
@@ -64,11 +65,12 @@ export function Menu({ menuIsOpen, onCloseMenu }) {
           />
           <Nav>
             {[USER_ROLE.ADMIN].includes(user.role) && (
-              <a href="" onClick={handleNewDish}>
-                Novo prato
-              </a>
+              // <a href="" onClick={handleNewDish}>
+              //   Novo prato
+              // </a>
+              <button onClick={handleNewDish} ></button>
             )}
-            <a href="" onClick={handleNewDish}>
+            <a href="" onClick={signOut}>
               Sair
             </a>
           </Nav>
