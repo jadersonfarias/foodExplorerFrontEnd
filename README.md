@@ -21,6 +21,12 @@
 
 <h2 id="project">📁 Projeto</h2>
 
+<h3> - Imagem do projeto 😁 </h3>
+
+<p align="center">
+  <img alt="License" src="https://github.com/jadersonfarias/foodExplorerBackEnd/raw/main/src/assets/Imgem-do-projeto.png">
+</p>
+
 O projeto Food Explorer consiste no desafio final do programa Explorer da Rocketseat. Trata-se de uma aplicação de cardápio digital para um restaurante fictício.
 
 O front-end do projeto, responsável pela interface do usuário, está disponível neste repositório. Já o back-end, que lida com a lógica e o armazenamento dos dados, está disponível [aqui](https://github.com/jadersonfarias/foodExplorerBackEnd).
@@ -35,8 +41,6 @@ A aplicação conta com as seguintes páginas:
 - Detalhes do prato
 - Novo prato
 - Editar prato
-
-!["Página home"](./src/assets/homeFoodFy.gif)
 
 <h2 id="features">🛠️ Funcionalidades</h2>
 
@@ -65,6 +69,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - Styled Components
 - Swiper
 - ViteJS
+- react-icons
 
 <h2 id="usage">💡 Utilização</h2>
 
