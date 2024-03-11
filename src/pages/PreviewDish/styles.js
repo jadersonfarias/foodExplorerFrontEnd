@@ -13,12 +13,18 @@ export const Container = styled.div`
 
 export const Main = styled.main`
   flex: 1;
+  width: 95%;
+  padding: 6rem  0rem   ;
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+   // padding: 6rem  0rem  0 ;
+   width: 100%;
+
+  }
+
 `;
 
 export const MainContent = styled.section`
-  width: 85%;
-  margin: auto;
-  padding-top:8rem;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,13 +34,13 @@ export const MainContent = styled.section`
 
 
   @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {
-    padding-top: 7rem;
+    //padding-top: 4rem;
    
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-   
-    padding-top:5.5rem;
+    //width: 96%;
+    padding: 2rem  0  0 ;
     flex-direction: column;
 
     text-align: center;
@@ -45,12 +51,11 @@ export const MainContent = styled.section`
 
 export const MainImage = styled.img`
   display: block;
-  //max-height: 35rem;
-  max-width: 25rem;
+  max-width: 35rem;
   border-radius: 50%;
 
-  overflow-clip-margin: content-box;
-  overflow: clip;
+ // overflow-clip-margin: content-box;
+ // overflow: clip;
 
 
   transition: transform 1.8s ease-in-out;
@@ -61,12 +66,11 @@ export const MainImage = styled.img`
 
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-    max-height: 20rem;
-    max-width: 20rem;
+    max-height: 25rem;
+    max-width: 25rem;
   }
 `;
 export const DishContent = styled.div`
-
   h1 {
     font-family: Poppins;
     font-size: 3rem;
@@ -84,7 +88,8 @@ export const DishContent = styled.div`
 
   .ingredient-tag {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
+  
   }
 
   .bottom-card {
@@ -109,6 +114,8 @@ export const DishContent = styled.div`
     }
   }
 
+
+
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
     h1 {
       font-size: 2.7rem;
@@ -129,7 +136,7 @@ export const DishContent = styled.div`
   
 
   @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
-    width: 90%;
+    width: 100%;
     h1 {
       font-size: 2.5rem;
     }
@@ -140,31 +147,44 @@ export const DishContent = styled.div`
 `;
 export const ButtonCard = styled(Button)`
   background: ${({ theme }) => theme.COLORS.TOMATO["100"]};
-  max-width: 16.2rem;
+  //max-width: 16.2rem;
+  width: 50%;
   height: 3.8rem;
 
+  @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {
+    width: 55%;
+}
+
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-  
+    width: 100%;
+}
+
+@media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    width: 80%;
 }
 
 
 `;
 
 export const Button_back = styled(ButtonText)`
+  font-size: 3.5rem;
   position: absolute;
-  left: -3.5rem;
-  top: 1.5rem;
+  left: 4.0rem;
+  top: -3.5rem;
 
-  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-    top: 1rem;
-    left: -5rem;
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) { 
+    font-size: 3rem;
+    top: -3rem;
+    left: 3rem;
   }
   @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
-    top: 2rem;
-    left: -3rem;
+    font-size: 2rem;
+    top: -4rem;
+    left: 1.5rem;
   }
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    top: 2rem;
-    left: -3rem;
+    
+    top: -5rem;
+    left: 1rem;
   }
 `;
