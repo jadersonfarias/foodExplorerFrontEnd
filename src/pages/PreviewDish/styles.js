@@ -16,9 +16,9 @@ export const Main = styled.main`
 `;
 
 export const MainContent = styled.section`
-  width: 80%;
+  width: 85%;
   margin: auto;
-  padding-top:5rem;
+  padding-top:8rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,9 +29,11 @@ export const MainContent = styled.section`
 
   @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {
     padding-top: 7rem;
+   
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+   
     padding-top:5.5rem;
     flex-direction: column;
 
