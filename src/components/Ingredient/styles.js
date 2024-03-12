@@ -10,7 +10,7 @@ export const Container = styled.div`
     line-height: 2.4rem; 
 
 
-    padding:.2rem;
+    padding:.5rem;
     border-radius: .5rem;
 
  
