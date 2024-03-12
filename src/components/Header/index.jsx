@@ -58,6 +58,11 @@ export function Header({ onOpenMenu, children, ...rest }) {
     navigate("/CreateDish");
   }
 
+  function handleLogOut(){
+    navigate("/");
+    signOut();
+}
+
   return (
     <Container {...rest}>
       <Menu onClick={onOpenMenu}>
@@ -91,7 +96,7 @@ export function Header({ onOpenMenu, children, ...rest }) {
         
       </Request>
 
-      <Logout onClick={signOut}>
+      <Logout onClick={handleLogOut}>
         <img src={SignOut} alt="sair" />
       </Logout>
       {user.role === USER_ROLE.CUSTOMER && 
