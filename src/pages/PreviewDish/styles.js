@@ -56,6 +56,7 @@ export const MainImage = styled.img`
   display: block;
   max-width: 35rem;
   border-radius: 50%;
+  object-fit: cover;
 
   overflow-clip-margin: content-box;
   overflow: clip;
@@ -144,7 +145,7 @@ export const DishContent = styled.div`
 `;
 export const ButtonCard = styled(Button)`
   background: ${({ theme }) => theme.COLORS.TOMATO["100"]};
-  width: 35%;
+  max-width: 16.2rem ;
   height: 3.8rem;
 
 
@@ -153,9 +154,7 @@ export const ButtonCard = styled(Button)`
     width: 100%;
   }
 
-  @media (max-width: ${DEVICE_BREAKPOINTS.XL}) {
-    width: 45%;
-  }
+
 
   @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
     width: 16.0rem;

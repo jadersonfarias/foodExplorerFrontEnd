@@ -20,7 +20,7 @@ export const Container = styled.div`
 `;
 
 export const Form = styled.form`
-  max-width: 90%;
+  max-width: 95%;
   margin: 4rem auto 11.6rem;
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
