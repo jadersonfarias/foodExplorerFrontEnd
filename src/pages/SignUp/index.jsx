@@ -16,12 +16,15 @@ export function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
 
   const navigate = useNavigate();
 
   function handleSignUp() {
     if (!name || !email || !password) {
       alert("Preencha todos os campos!");
+      return
     }
 
     api
@@ -36,7 +39,8 @@ export function SignUp() {
         } else {
           alert("Não foi possível cadatrar");
         }
-      });
+      })
+      .finally(() => setLoading(false));
   }
 
   return (
@@ -81,7 +85,7 @@ export function SignUp() {
             icon={FiLock}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button title="criar conta" onClick={handleSignUp} />
+          <Button title="criar conta" onClick={handleSignUp} loading={loading}/>
         </div>
 
         <Link to="/">Já tenho uma conta</Link>

@@ -100,7 +100,10 @@ export const Container = styled.div`
 
   > img {
     max-width: 15rem;
+    height: 13rem;
     border-radius: 50%;
+
+    object-fit: cover;
   }
 
   .like {

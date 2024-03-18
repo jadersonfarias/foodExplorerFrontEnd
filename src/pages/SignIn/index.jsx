@@ -12,13 +12,15 @@ import { FiMail, FiLock } from "react-icons/fi";
 export function SignIn() {
   const [email, setEmail ] = useState("")
   const [password, setPassword ] = useState("")
+  const [loading, setLoading] = useState(false);
   
 
   const { signIn } = useAuth();
 
 
   function handleSignIn(){
-    signIn({ email, password});
+    setLoading(true);
+    signIn({ email, password}).finally(() => setLoading(false));
   }
 
   return (
@@ -42,7 +44,7 @@ export function SignIn() {
           </label>
           <Input placeholder="Senha" type="password" icon={FiLock} onChange={e => setPassword(e.target.value)}/>
         
-          <Button title="Faça Login" onClick={handleSignIn} />
+          <Button title="Faça Login" onClick={handleSignIn} loading={loading}/>
         </div>
 
         <Link to="/register">criar uma conta</Link>
