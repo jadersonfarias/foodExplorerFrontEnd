@@ -54,7 +54,8 @@ export const MainContent = styled.section`
 
 export const MainImage = styled.img`
   display: block;
-  max-width: 35rem;
+  max-width: 25rem;
+  height: 25rem;
   border-radius: 50%;
   object-fit: cover;
 
